@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, FileText, Mail } from "lucide-react";
-import profileImage from "@/assets/profile-portrait.jpg";
+import profileImage from "@/assets/profile-portrait.png";
 
 const HeroSection = () => {
   return (
@@ -37,7 +37,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-sage text-sm md:text-base tracking-wide mb-8"
+            className="text-sage text-2xl md:text-3xl font-heading tracking-wide mb-8"
           >
             Data Engineer
           </motion.p>
@@ -49,8 +49,9 @@ const HeroSection = () => {
             className="body-large text-cream/80 max-w-lg mb-10"
           >
             Data Engineer specializing in building robust, scalable data
-            pipelines and enterprise data platforms. When not working with
-            data, I'm usually painting or maintaining a Duolingo streak.
+            pipelines and enterprise data platforms, with hands-on experience
+            in data analysis, business intelligence, full-stack development,
+            and applied machine learning.
           </motion.p>
 
           <motion.div

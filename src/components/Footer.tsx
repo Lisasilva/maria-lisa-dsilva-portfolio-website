@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -13,10 +12,6 @@ const Footer = () => {
         >
           <p className="font-heading text-lg text-cream/80">
             Maria Lisa Dsilva
-          </p>
-
-          <p className="text-sm flex items-center gap-1">
-            Made with <Heart size={14} className="text-sage" /> in 2024
           </p>
 
           <nav className="flex gap-6">

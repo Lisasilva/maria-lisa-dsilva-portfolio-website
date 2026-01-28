@@ -46,9 +46,6 @@ const AboutSection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="font-heading text-2xl mb-6 italic">
-              Building the data infrastructure of tomorrow
-            </h3>
             <div className="space-y-4 body-large text-muted-foreground">
               <p>
                 I'm a Data Engineer with a passion for designing and
