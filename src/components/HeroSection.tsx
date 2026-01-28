@@ -22,15 +22,6 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-primary-foreground order-2 lg:order-1"
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="label-text text-sage mb-4"
-          >
-            Data Engineer
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,7 +30,7 @@ const HeroSection = () => {
           >
             Maria Lisa
             <br />
-            <span className="italic font-normal">Dsilva</span>
+            Dsilva
           </motion.h1>
 
           <motion.p
@@ -48,7 +39,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-sage text-sm md:text-base tracking-wide mb-8"
           >
-            Big Data | BI & Analytics | Applied ML
+            Data Engineer
           </motion.p>
 
           <motion.p
@@ -83,7 +74,9 @@ const HeroSection = () => {
               Contact Me
             </a>
             <a
-              href="#"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
             >
               <FileText size={16} />
