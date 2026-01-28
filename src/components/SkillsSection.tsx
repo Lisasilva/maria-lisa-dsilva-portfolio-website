@@ -57,26 +57,52 @@ const certifications = [
   {
     name: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
+    link: "https://www.credly.com/badges/aws-cloud-practitioner",
   },
   {
     name: "Databricks Certified Data Engineer Associate",
     issuer: "Databricks",
+    link: "https://credentials.databricks.com/data-engineer-associate",
   },
   {
     name: "Databricks Certified Data Engineer Professional",
     issuer: "Databricks",
+    link: "https://credentials.databricks.com/data-engineer-professional",
   },
   {
     name: "SnowPro Core Certification",
     issuer: "Snowflake",
+    link: "https://www.credly.com/badges/snowpro-core",
   },
   {
     name: "Generative AI Fundamentals",
     issuer: "Databricks",
+    link: "https://credentials.databricks.com/generative-ai-fundamentals",
   },
   {
     name: "Big Data & Machine Learning Specialization",
-    issuer: "UC San Diego",
+    issuer: "UC San Diego (Coursera)",
+    link: "https://www.coursera.org/account/accomplishments/specialization",
+  },
+  {
+    name: "Oracle Cloud Infrastructure Generative AI Professional",
+    issuer: "Oracle",
+    link: "https://catalog-education.oracle.com/pls/certview/sharebadge",
+  },
+  {
+    name: "Machine Learning Specialization",
+    issuer: "Stanford University (Coursera)",
+    link: "https://www.coursera.org/account/accomplishments/specialization",
+  },
+  {
+    name: "Power BI Data Analyst",
+    issuer: "Microsoft",
+    link: "https://learn.microsoft.com/en-us/certifications/power-bi-data-analyst",
+  },
+  {
+    name: "Data Analysis with Python",
+    issuer: "IBM (Coursera)",
+    link: "https://www.coursera.org/account/accomplishments/certificate",
   },
 ];
 
@@ -138,16 +164,19 @@ const SkillsSection = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {certifications.map((cert, index) => (
-              <motion.div
+              <motion.a
                 key={index}
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
-                className="bg-background p-4 border border-forest/20 hover:border-forest/40 transition-colors"
+                className="bg-background p-4 border border-forest/20 hover:border-forest/40 hover:bg-forest/5 transition-colors cursor-pointer block"
               >
-                <h4 className="font-medium text-sm mb-1">{cert.name}</h4>
+                <h4 className="font-medium text-sm mb-1 hover:text-forest transition-colors">{cert.name}</h4>
                 <p className="text-xs text-muted-foreground">{cert.issuer}</p>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </motion.div>

@@ -1,37 +1,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Mail, Linkedin, Github, FileText, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { toast } from "@/hooks/use-toast";
+import { useRef } from "react";
+import { Mail, Linkedin, Github, FileText } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", message: "" });
-  };
 
   const socialLinks = [
-    {
-      name: "Email",
-      icon: Mail,
-      href: "mailto:marialisadsilva@email.com",
-      label: "marialisadsilva@email.com",
-    },
     {
       name: "LinkedIn",
       icon: Linkedin,
@@ -67,111 +43,59 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+        <div className="flex flex-col items-center gap-8">
+          {/* Email Button */}
+          <motion.a
+            href="mailto:marialisadsilva@email.com"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-cream text-forest font-medium text-lg hover:bg-cream/90 transition-colors"
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="label-text text-sage block mb-2">Name</label>
-                <Input
-                  type="text"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/40 focus:border-cream"
-                  placeholder="Your name"
-                  required
-                />
-              </div>
-              <div>
-                <label className="label-text text-sage block mb-2">Email</label>
-                <Input
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/40 focus:border-cream"
-                  placeholder="your@email.com"
-                  required
-                />
-              </div>
-              <div>
-                <label className="label-text text-sage block mb-2">
-                  Message
-                </label>
-                <Textarea
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                  className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/40 focus:border-cream min-h-[150px]"
-                  placeholder="Your message..."
-                  required
-                />
-              </div>
-              <Button
-                type="submit"
-                className="w-full bg-cream text-forest hover:bg-cream/90 font-medium"
-              >
-                <Send size={16} className="mr-2" />
-                Send Message
-              </Button>
-            </form>
-          </motion.div>
+            <Mail size={24} />
+            Email Me
+          </motion.a>
 
-          {/* Contact Info */}
+          {/* Social Links */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-8"
+            className="flex flex-wrap justify-center gap-4"
           >
-            <div>
-              <h3 className="font-heading text-2xl text-cream mb-6">
-                Let's Connect
-              </h3>
-              <div className="space-y-4">
-                {socialLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-cream/5 border border-cream/10 hover:border-cream/30 transition-colors group"
-                  >
-                    <link.icon
-                      size={20}
-                      className="text-sage group-hover:text-cream transition-colors"
-                    />
-                    <div>
-                      <p className="text-sm text-sage">{link.name}</p>
-                      <p className="text-cream">{link.label}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Resume Download */}
-            <div className="pt-8 border-t border-cream/10">
+            {socialLinks.map((link, index) => (
               <a
-                href="#"
-                className="inline-flex items-center gap-3 px-6 py-4 border border-cream/30 text-cream hover:bg-cream/10 transition-colors"
+                key={index}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-6 py-3 bg-cream/5 border border-cream/10 hover:border-cream/30 transition-colors group"
               >
-                <FileText size={20} />
-                <span>
-                  <p className="text-sm text-sage">Download</p>
-                  <p className="font-medium">Resume / CV</p>
-                </span>
+                <link.icon
+                  size={20}
+                  className="text-sage group-hover:text-cream transition-colors"
+                />
+                <span className="text-cream">{link.label}</span>
               </a>
-            </div>
+            ))}
           </motion.div>
+
+          {/* Resume Download */}
+          <motion.a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="inline-flex items-center gap-3 px-6 py-4 border border-cream/30 text-cream hover:bg-cream/10 transition-colors"
+          >
+            <FileText size={20} />
+            <span>
+              <p className="text-sm text-sage">Download</p>
+              <p className="font-medium">Resume / CV</p>
+            </span>
+          </motion.a>
         </div>
       </div>
     </section>
