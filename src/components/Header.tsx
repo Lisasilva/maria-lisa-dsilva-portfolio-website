@@ -33,7 +33,7 @@ const Header = () => {
     >
       <div className="container-narrow flex items-center justify-between">
         <a href="#home" className="font-heading text-xl md:text-2xl font-medium tracking-tight">
-          Maria Lisa
+          ML
         </a>
 
         {/* Desktop Navigation */}
