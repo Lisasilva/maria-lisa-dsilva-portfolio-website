@@ -60,7 +60,7 @@ const BeyondDataSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="bg-forest/5 border border-forest/10 p-5 text-center hover:border-forest/30 transition-colors"
+                className="bg-forest/10 border border-forest/20 p-5 text-center hover:border-forest/40 transition-colors"
               >
                 <p className="font-heading text-lg font-medium text-foreground">
                   {lang.language}
@@ -83,7 +83,7 @@ const BeyondDataSection = () => {
             <h3 className="font-heading text-2xl md:text-3xl">NCC Experience</h3>
           </div>
 
-          <div className="bg-forest/5 border border-forest/10 p-8 md:p-10">
+          <div className="bg-forest/10 border border-forest/20 p-8 md:p-10">
             <p className="body-large text-muted-foreground max-w-2xl">
               Former NCC cadet, an experience that strengthened my discipline,
               teamwork, and leadership skills.
@@ -123,7 +123,7 @@ const BeyondDataSection = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                className="aspect-square bg-forest/5 border border-forest/10 overflow-hidden group cursor-pointer"
+                className="aspect-square bg-forest/10 border border-forest/20 overflow-hidden group cursor-pointer"
               >
                 <div className="w-full h-full flex items-center justify-center text-muted-foreground/50 group-hover:bg-forest/10 transition-colors">
                   <Palette size={32} className="opacity-30 group-hover:opacity-50 transition-opacity" />

@@ -27,6 +27,10 @@ const skillCategories = [
       "Talend",
       "ETL",
       "CI/CD",
+      "Data Migration",
+      "Orchestration",
+      "Medallion Architecture",
+      "PostgreSQL",
     ],
   },
   {
@@ -37,10 +41,10 @@ const skillCategories = [
   {
     title: "Frameworks & Web",
     icon: Globe,
-    skills: ["Spring Boot", "Hibernate", "REST APIs", "HTML", "CSS"],
+    skills: ["Spring Boot", "Hibernate", "REST APIs", "HTML", "CSS", "JDBC", "JPA"],
   },
   {
-    title: "Tools",
+    title: "Tools & Platforms",
     icon: Wrench,
     skills: [
       "GitHub",
@@ -49,6 +53,17 @@ const skillCategories = [
       "MySQL Workbench",
       "RapidMiner",
       "Android Studio",
+      "SQL Plus",
+      "Visual Studio",
+      "Cisco Packet Tracer",
+      "VS Code",
+      "Eclipse",
+      "PyCharm",
+      "IntelliJ IDEA",
+      "CodeBlocks",
+      "IDLE",
+      "Google Colab",
+      "Jupyter Notebooks",
     ],
   },
 ];
@@ -111,7 +126,7 @@ const SkillsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="section-padding bg-secondary" ref={ref}>
+    <section id="skills" className="section-padding bg-background" ref={ref}>
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -131,7 +146,7 @@ const SkillsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className="bg-background p-6 border border-border hover-lift"
+              className="bg-forest/5 p-6 border border-forest/20 hover:border-forest/40 transition-colors hover-lift"
             >
               <div className="flex items-center gap-3 mb-4">
                 <category.icon size={24} className="text-forest" />
