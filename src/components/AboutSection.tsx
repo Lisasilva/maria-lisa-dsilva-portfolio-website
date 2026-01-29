@@ -60,9 +60,8 @@ const AboutSection = () => {
                 solutions.
               </p>
               <p>
-                Beyond the world of data, I find creative expression through
-                painting and stay committed to learning new languages—currently
-                on a multi-year Duolingo streak that I'm quite proud of.
+                Outside the world of data, I express my creativity through
+                painting and staying committed to my Duolingo streak.
               </p>
             </div>
 
