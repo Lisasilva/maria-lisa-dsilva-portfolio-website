@@ -8,6 +8,7 @@ const navLinks = [
   { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
+  { name: "Beyond", href: "#beyond" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -33,7 +34,7 @@ const Header = () => {
     >
       <div className="container-narrow flex items-center justify-between">
         <a href="#home" className="font-heading text-xl md:text-2xl font-medium tracking-tight">
-          ML
+          Maria
         </a>
 
         {/* Desktop Navigation */}
@@ -42,7 +43,7 @@ const Header = () => {
             <a
               key={link.name}
               href={link.href}
-              className="label-text hover:text-foreground transition-colors duration-300"
+              className="text-sm md:text-base font-medium tracking-wide text-foreground/80 hover:text-foreground transition-colors duration-300"
             >
               {link.name}
             </a>

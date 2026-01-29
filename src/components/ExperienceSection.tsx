@@ -75,35 +75,51 @@ const ExperienceSection = () => {
           <h2 className="editorial-heading text-cream">Experience</h2>
         </motion.div>
 
-        {/* Experience Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Vertical Timeline */}
+        <div className="relative">
+          {/* Timeline Line */}
+          <div className="absolute left-0 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-cream/20" />
+
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="bg-cream/10 p-6 border border-cream/20 hover:border-cream/40 transition-colors"
+              className={`relative flex flex-col md:flex-row gap-8 mb-12 last:mb-0 ${
+                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
             >
-              <div className="flex items-center gap-2 mb-2">
-                <Briefcase size={16} className="text-sage" />
-                <span className="label-text text-sage">{exp.company}</span>
+              {/* Timeline Dot */}
+              <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-sage rounded-full border-2 border-cream/40" />
+
+              {/* Content */}
+              <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
+                <div className="bg-cream/10 p-6 border border-cream/20 hover:border-cream/40 transition-colors">
+                  <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                    <Briefcase size={16} className="text-sage" />
+                    <span className="label-text text-sage">{exp.company}</span>
+                  </div>
+                  <h3 className="font-heading text-xl md:text-2xl text-cream mb-2">
+                    {exp.title}
+                  </h3>
+                  <div className={`flex items-center gap-2 text-cream/60 text-sm mb-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                    <Calendar size={14} />
+                    <span>{exp.period}</span>
+                  </div>
+                  <ul className={`space-y-2 text-cream/70 text-sm ${index % 2 === 0 ? "md:text-right" : ""}`}>
+                    {exp.description.map((item, i) => (
+                      <li key={i} className={`flex items-start gap-2 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+                        <span className="text-sage mt-1.5">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <h3 className="font-heading text-xl md:text-2xl text-cream mb-2">
-                {exp.title}
-              </h3>
-              <div className="flex items-center gap-2 text-cream/60 text-sm mb-4">
-                <Calendar size={14} />
-                <span>{exp.period}</span>
-              </div>
-              <ul className="space-y-2 text-cream/70 text-sm">
-                {exp.description.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-sage mt-1.5">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+
+              {/* Spacer for alternating layout */}
+              <div className="hidden md:block flex-1" />
             </motion.div>
           ))}
         </div>
