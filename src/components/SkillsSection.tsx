@@ -103,7 +103,7 @@ const SkillsSection = () => {
                 {category.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="px-2.5 py-1 bg-muted text-xs text-muted-foreground"
+                    className="px-2.5 py-1 bg-forest/10 border border-forest/15 text-xs text-muted-foreground hover:-translate-y-0.5 hover:border-forest/30 transition-all duration-200 cursor-default"
                   >
                     {skill}
                   </span>
