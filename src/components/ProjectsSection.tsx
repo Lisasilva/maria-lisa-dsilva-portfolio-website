@@ -1,24 +1,18 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "Supply Chain Management Platform",
-    category: "Blockchain & Java",
+    title: "Vehicle Financing BI Dashboard",
+    category: "BI & Analytics",
     description:
-      "Built a decentralized supply chain tracking system using blockchain technology to ensure transparency and traceability across the entire supply chain.",
-    tech: ["Java", "Blockchain", "Smart Contracts", "REST API"],
-    impact: "Improved supply chain transparency by 60%",
-  },
-  {
-    title: "Crime Data Mining & Analysis",
-    category: "Data Science",
-    description:
-      "Developed clustering models to analyze crime patterns and predict high-risk areas using advanced data mining techniques.",
-    tech: ["Python", "Scikit-learn", "Clustering", "Data Visualization"],
-    impact: "Identified 15+ crime pattern clusters",
+      "Designed comprehensive Power BI dashboard with ML-driven predictions for vehicle financing risk assessment and portfolio analysis.",
+    tech: ["Power BI", "DAX", "Python", "Machine Learning"],
+    impact: "Enhanced decision-making accuracy by 35%",
+    link: "https://github.com/Lisasilva/Vehicle-Financing-Performance-Dashboard-for-Automotive-Finance",
   },
   {
     title: "AI Document De-duplication Pipeline",
@@ -27,14 +21,25 @@ const projects = [
       "Created an intelligent document processing pipeline using NLP and GPT to identify and remove duplicate documents in large datasets.",
     tech: ["Python", "NLP", "GPT API", "Vector Embeddings"],
     impact: "Reduced document redundancy by 40%",
+    link: null,
   },
   {
-    title: "Vehicle Financing BI Dashboard",
-    category: "BI & Analytics",
+    title: "Crime Data Mining & Analysis",
+    category: "Data Science",
     description:
-      "Designed comprehensive Power BI dashboard with ML-driven predictions for vehicle financing risk assessment and portfolio analysis.",
-    tech: ["Power BI", "DAX", "Python", "Machine Learning"],
-    impact: "Enhanced decision-making accuracy by 35%",
+      "Developed clustering models to analyze crime patterns and predict high-risk areas using advanced data mining techniques.",
+    tech: ["Python", "Scikit-learn", "Clustering", "Data Visualization"],
+    impact: "Identified 15+ crime pattern clusters",
+    link: "https://github.com/Lisasilva/Crime-Analysis-in-India",
+  },
+  {
+    title: "Supply Chain Management Platform",
+    category: "Blockchain & Java",
+    description:
+      "Built a decentralized supply chain tracking system using blockchain technology to ensure transparency and traceability across the entire supply chain.",
+    tech: ["Java", "Blockchain", "Smart Contracts", "REST API"],
+    impact: "Improved supply chain transparency by 60%",
+    link: "https://github.com/Lisasilva/Warehouse-Simulation",
   },
   {
     title: "IR Sensor Distance Measurement",
@@ -43,6 +48,7 @@ const projects = [
       "Engineered an embedded system for precise distance measurement using infrared sensors with real-time data processing.",
     tech: ["Arduino", "C++", "IR Sensors", "Signal Processing"],
     impact: "Achieved ±2mm measurement accuracy",
+    link: "https://github.com/Lisasilva/Distance-Measurement-Using-IR-Sharp-Sensor",
   },
 ];
 
@@ -51,7 +57,7 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="section-padding bg-secondary" ref={ref}>
+    <section id="projects" className="section-padding bg-forest" ref={ref}>
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -59,30 +65,32 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="label-text mb-4">Featured Work</p>
-          <h2 className="editorial-heading">Projects</h2>
+          <p className="label-text text-sage mb-4">Featured Work</p>
+          <h2 className="editorial-heading text-cream">Projects</h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <motion.article
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className="group bg-card border border-border hover:border-forest/30 transition-all duration-300 hover-lift"
+              className="group bg-charcoal/50 border border-sage/20 hover:border-sage/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sage/10 flex flex-col"
             >
               {/* Project Header */}
-              <div className="bg-forest p-6">
-                <p className="label-text text-sage mb-2">{project.category}</p>
-                <h3 className="font-heading text-xl md:text-2xl text-cream">
+              <div className="p-6 pb-4">
+                <p className="text-xs font-medium tracking-widest uppercase text-sage mb-2">
+                  {project.category}
+                </p>
+                <h3 className="font-heading text-xl text-cream group-hover:text-sage transition-colors">
                   {project.title}
                 </h3>
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+              <div className="px-6 pb-6 flex-grow flex flex-col">
+                <p className="text-cream/70 text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
 
@@ -91,7 +99,7 @@ const ProjectsSection = () => {
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2 py-1 bg-secondary text-xs font-medium"
+                      className="px-2.5 py-1 bg-sage/10 border border-sage/20 text-xs text-cream/80 font-medium"
                     >
                       {tech}
                     </span>
@@ -99,26 +107,44 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Impact */}
-                <div className="pt-4 border-t border-border">
+                <div className="pt-4 border-t border-sage/20 mb-4">
                   <p className="text-sm">
-                    <span className="text-forest font-medium">Impact:</span>{" "}
-                    <span className="text-muted-foreground">
-                      {project.impact}
-                    </span>
+                    <span className="text-sage font-medium">Impact:</span>{" "}
+                    <span className="text-cream/70">{project.impact}</span>
                   </p>
                 </div>
 
-                {/* Links */}
-                <div className="mt-4 flex gap-4">
-                  <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    <Github size={16} />
-                    View Code
-                  </button>
-                  <button className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                    <ExternalLink size={16} />
-                    Live Demo
-                  </button>
-                </div>
+                {/* Spacer */}
+                <div className="flex-grow" />
+
+                {/* View Project Button */}
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full border-sage/30 text-cream hover:bg-sage hover:text-forest hover:border-sage transition-all duration-300 group-hover:border-sage"
+                    >
+                      <Github size={16} className="mr-2" />
+                      View Project
+                    </Button>
+                  </a>
+                ) : (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full border-sage/20 text-cream/50 cursor-not-allowed"
+                    disabled
+                  >
+                    <Github size={16} className="mr-2" />
+                    Coming Soon
+                  </Button>
+                )}
               </div>
             </motion.article>
           ))}

@@ -111,7 +111,7 @@ const CertificationsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
-              className="group bg-card border border-forest/20 p-6 hover:border-forest/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="group bg-forest/5 border border-forest/20 p-6 hover:border-forest/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               {/* Header with subtle badge icon */}
               <div className="flex items-start gap-3 mb-4">

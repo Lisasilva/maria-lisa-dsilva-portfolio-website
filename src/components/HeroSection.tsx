@@ -30,7 +30,7 @@ const HeroSection = () => {
           >
             Maria Lisa
             <br />
-            Dsilva
+            D Silva
           </motion.h1>
 
           <motion.p
@@ -97,7 +97,7 @@ const HeroSection = () => {
             <div className="absolute -inset-4 bg-sage/20 -z-10" />
             <img
               src={profileImage}
-              alt="Maria Lisa Dsilva"
+              alt="Maria Lisa D Silva"
               className="w-72 md:w-80 lg:w-96 h-auto object-cover grayscale"
             />
           </div>

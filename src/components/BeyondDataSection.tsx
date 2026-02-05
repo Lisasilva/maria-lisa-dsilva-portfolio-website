@@ -60,7 +60,7 @@ const BeyondDataSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="bg-forest/10 border border-forest/20 p-5 text-center hover:border-forest/40 transition-colors"
+                className="bg-forest/10 border border-forest/20 p-5 text-center hover:border-forest/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default"
               >
                 <p className="font-heading text-lg font-medium text-foreground">
                   {lang.language}
@@ -89,7 +89,7 @@ const BeyondDataSection = () => {
               teamwork, and leadership skills.
             </p>
             <a
-              href="/ncc-certificate.pdf"
+              href="/NCC.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-6 text-forest font-medium hover:underline transition-all"
