@@ -11,7 +11,7 @@ const Footer = () => {
           className="flex flex-col md:flex-row items-center justify-between gap-4"
         >
           <p className="font-heading text-lg text-cream/80">
-            Maria Lisa Dsilva
+            Maria Lisa D Silva
           </p>
 
           <nav className="flex gap-6">
