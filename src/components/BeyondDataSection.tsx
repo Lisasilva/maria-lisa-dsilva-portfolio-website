@@ -3,6 +3,13 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Globe, Award, Palette, ExternalLink } from "lucide-react";
 
+import horseImg from "@/assets/paintings/horse.jpeg";
+import peakyImg from "@/assets/paintings/peaky-blinders.jpeg";
+import flowerImg from "@/assets/paintings/flower.png";
+import forestImg from "@/assets/paintings/forest-mist.jpeg";
+import seaImg from "@/assets/paintings/stormy-sea.jpeg";
+import meadowImg from "@/assets/paintings/sunset-meadow.jpeg";
+
 const languages = [
   { language: "English", level: "Fluent" },
   { language: "Hindi", level: "Fluent" },
@@ -12,12 +19,12 @@ const languages = [
 ];
 
 const paintings = [
-  { id: 1, placeholder: true },
-  { id: 2, placeholder: true },
-  { id: 3, placeholder: true },
-  { id: 4, placeholder: true },
-  { id: 5, placeholder: true },
-  { id: 6, placeholder: true },
+  { id: 1, src: horseImg, alt: "White Horse Portrait" },
+  { id: 2, src: peakyImg, alt: "Peaky Blinders Portrait" },
+  { id: 3, src: flowerImg, alt: "Red Dahlia Flower" },
+  { id: 4, src: forestImg, alt: "Misty Pine Forest" },
+  { id: 5, src: seaImg, alt: "Stormy Sea" },
+  { id: 6, src: meadowImg, alt: "Sunset Meadow Landscape" },
 ];
 
 const BeyondDataSection = () => {
@@ -116,25 +123,26 @@ const BeyondDataSection = () => {
             detail, and expression beyond logic and code.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {paintings.map((painting, index) => (
               <motion.div
                 key={painting.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                className="aspect-square bg-forest/10 border border-forest/20 overflow-hidden group cursor-pointer"
+                className="group relative overflow-hidden cursor-pointer"
               >
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground/50 group-hover:bg-forest/10 transition-colors">
-                  <Palette size={32} className="opacity-30 group-hover:opacity-50 transition-opacity" />
+                <div className="aspect-[3/4] overflow-hidden shadow-lg">
+                  <img
+                    src={painting.src}
+                    alt={painting.alt}
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                  />
                 </div>
+                <div className="absolute inset-0 bg-forest/0 group-hover:bg-forest/10 transition-all duration-500 pointer-events-none" />
               </motion.div>
             ))}
           </div>
-
-          <p className="text-sm text-muted-foreground text-center mt-6 italic">
-            Add your paintings to showcase your artwork
-          </p>
         </motion.div>
       </div>
     </section>
