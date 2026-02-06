@@ -17,8 +17,8 @@ const ContactSection = () => {
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/marialisadsilva",
-      label: "github.com/marialisadsilva",
+      href: "https://github.com/Lisasilva",
+      label: "github.com/Lisasilva",
     },
   ];
 
@@ -46,7 +46,7 @@ const ContactSection = () => {
         <div className="flex flex-col items-center gap-8">
           {/* Email Button */}
           <motion.a
-            href="mailto:marialisadsilva@email.com"
+            href="mailto:marialisa917@gmail.com"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
