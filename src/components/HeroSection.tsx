@@ -39,7 +39,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.7 }}
             className="text-sage text-2xl md:text-3xl font-heading tracking-wide mb-8"
           >
-            Data Engineer
+            Data Engineer | Dubai, UAE
           </motion.p>
 
           <motion.p
@@ -51,7 +51,7 @@ const HeroSection = () => {
             Data Engineer specializing in building robust, scalable data
             pipelines and enterprise data platforms, with hands-on experience
             in data analysis, business intelligence, full-stack development,
-            and applied machine learning.
+            and applied machine learning. Currently based in Dubai, UAE.
           </motion.p>
 
           <motion.div
