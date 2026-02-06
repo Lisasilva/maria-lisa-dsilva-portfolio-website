@@ -128,7 +128,7 @@ const ProjectsSection = () => {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="w-full border-sage/30 text-cream hover:bg-sage hover:text-forest hover:border-sage transition-all duration-300 group-hover:border-sage"
+                      className="w-full border-sage bg-sage/20 text-sage hover:bg-sage hover:text-forest hover:border-sage transition-all duration-300"
                     >
                       <Github size={16} className="mr-2" />
                       View Project
