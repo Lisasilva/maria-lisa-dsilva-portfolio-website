@@ -104,8 +104,7 @@ const BeyondDataSection = () => {
 
           <div className="bg-forest/10 border border-forest/20 p-8 md:p-10">
             <p className="body-large text-muted-foreground max-w-2xl">
-              Former NCC cadet, an experience that strengthened my discipline,
-              teamwork, and leadership skills.
+              Former member of the National Cadet Corps (NCC) (2015–2017). The experience strengthened my discipline, leadership, and teamwork while training me in structured decision-making, responsibility, and performing effectively under pressure.
             </p>
             <a
               href="/NCC.pdf"
