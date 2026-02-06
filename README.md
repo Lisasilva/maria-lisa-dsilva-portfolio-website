@@ -16,4 +16,4 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-
+Note to self: everytime I update my resume, just go to the public folder and replace the existing resume with the latest one directly in the github UI
