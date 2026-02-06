@@ -1,8 +1,21 @@
 import { motion } from "framer-motion";
 import { ArrowDown, FileText, Mail } from "lucide-react";
+import { useCallback } from "react";
 import profileImage from "@/assets/profile-portrait.png";
 
 const HeroSection = () => {
+  // Prevent right-click context menu
+  const handleContextMenu = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    return false;
+  }, []);
+
+  // Prevent drag
+  const handleDragStart = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    return false;
+  }, []);
+
   return (
     <section
       id="home"
@@ -93,13 +106,27 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.3 }}
           className="order-1 lg:order-2 flex justify-center lg:justify-end"
         >
-          <div className="relative">
-            <div className="absolute -inset-4 bg-sage/20 -z-10" />
-            <img
-              src={profileImage}
-              alt="Maria Lisa D Silva"
-              className="w-72 md:w-80 lg:w-96 h-auto object-cover grayscale"
-            />
+          <div 
+            className="relative group cursor-default select-none"
+            onContextMenu={handleContextMenu}
+          >
+            <div className="absolute -inset-4 bg-sage/20 -z-10 transition-all duration-500 group-hover:bg-sage/30 group-hover:shadow-[0_0_40px_rgba(74,93,78,0.3)]" />
+            <div className="overflow-hidden">
+              <img
+                src={profileImage}
+                alt="Maria Lisa D Silva"
+                className="w-72 md:w-80 lg:w-96 h-auto object-cover grayscale transition-transform duration-500 group-hover:scale-105 pointer-events-none"
+                draggable={false}
+                onContextMenu={handleContextMenu}
+                onDragStart={handleDragStart}
+                style={{
+                  WebkitUserSelect: 'none',
+                  userSelect: 'none',
+                  WebkitTouchCallout: 'none',
+                  maxWidth: '100%',
+                }}
+              />
+            </div>
           </div>
         </motion.div>
       </div>
