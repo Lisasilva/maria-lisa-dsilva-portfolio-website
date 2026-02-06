@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useCallback } from "react";
 import { Globe, Award, Palette, ExternalLink } from "lucide-react";
 
-import horseImg from "@/assets/paintings/horse.jpeg";
-import peakyImg from "@/assets/paintings/peaky-blinders.jpeg";
-import flowerImg from "@/assets/paintings/flower.png";
-import forestImg from "@/assets/paintings/forest-mist.jpeg";
-import seaImg from "@/assets/paintings/stormy-sea.jpeg";
-import meadowImg from "@/assets/paintings/sunset-meadow.jpeg";
+import silentMeadowImg from "@/assets/paintings/silent-meadow.jpeg";
+import peakyManImg from "@/assets/paintings/peaky-man.jpg";
+import redBloomsImg from "@/assets/paintings/red-blooms.png";
+import frostedWoodsImg from "@/assets/paintings/frosted-woods.jpeg";
+import gentleSorrowImg from "@/assets/paintings/gentle-sorrow.jpeg";
+import furyWavesImg from "@/assets/paintings/fury-waves.jpeg";
 
 const languages = [
   { language: "English", level: "Fluent" },
@@ -19,17 +19,29 @@ const languages = [
 ];
 
 const paintings = [
-  { id: 1, src: horseImg, alt: "White Horse Portrait" },
-  { id: 2, src: peakyImg, alt: "Peaky Blinders Portrait" },
-  { id: 3, src: flowerImg, alt: "Red Dahlia Flower" },
-  { id: 4, src: forestImg, alt: "Misty Pine Forest" },
-  { id: 5, src: seaImg, alt: "Stormy Sea" },
-  { id: 6, src: meadowImg, alt: "Sunset Meadow Landscape" },
+  { id: 1, src: silentMeadowImg, alt: "The Silent Meadow", title: "The Silent Meadow" },
+  { id: 2, src: peakyManImg, alt: "The Peaky Man", title: "The Peaky Man" },
+  { id: 3, src: redBloomsImg, alt: "Red Blooms in Earnest", title: "Red Blooms in Earnest" },
+  { id: 4, src: frostedWoodsImg, alt: "Frosted Woods", title: "Frosted Woods" },
+  { id: 5, src: gentleSorrowImg, alt: "Gentle Sorrow", title: "Gentle Sorrow" },
+  { id: 6, src: furyWavesImg, alt: "Fury Waves", title: "Fury Waves" },
 ];
 
 const BeyondDataSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  // Prevent right-click context menu
+  const handleContextMenu = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    return false;
+  }, []);
+
+  // Prevent drag
+  const handleDragStart = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    return false;
+  }, []);
 
   return (
     <section
@@ -123,26 +135,57 @@ const BeyondDataSection = () => {
             detail, and expression beyond logic and code.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {paintings.map((painting, index) => (
               <motion.div
                 key={painting.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
-                className="group relative overflow-hidden cursor-pointer"
+                className="group relative overflow-hidden cursor-default select-none"
+                onContextMenu={handleContextMenu}
               >
-                <div className="aspect-[3/4] overflow-hidden shadow-lg">
+                <div className="aspect-[3/4] overflow-hidden shadow-lg relative">
                   <img
                     src={painting.src}
                     alt={painting.alt}
-                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-110"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 pointer-events-none"
+                    draggable={false}
+                    onContextMenu={handleContextMenu}
+                    onDragStart={handleDragStart}
+                    style={{ 
+                      WebkitUserSelect: 'none',
+                      userSelect: 'none',
+                      WebkitTouchCallout: 'none',
+                      maxWidth: '100%',
+                    }}
                   />
+                  
+                  {/* Hover overlay with title */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pointer-events-none">
+                    <div className="p-6 text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <p className="font-heading text-xl md:text-2xl text-cream font-medium tracking-wide">
+                        {painting.title}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Subtle glow effect on hover */}
+                  <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(74,93,78,0.3)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
-                <div className="absolute inset-0 bg-forest/0 group-hover:bg-forest/10 transition-all duration-500 pointer-events-none" />
               </motion.div>
             ))}
           </div>
+
+          {/* Copyright Notice */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 1.3 }}
+            className="text-center text-sm text-muted-foreground mt-12 italic"
+          >
+            All artworks displayed are original creations by Maria Lisa D Silva. Unauthorized reproduction or commercial use is prohibited.
+          </motion.p>
         </motion.div>
       </div>
     </section>
