@@ -53,8 +53,7 @@ const experiences = [
     company: "D'Souza Metal Cutting Pvt Ltd",
     period: "Jun 2022 – Aug 2022",
     description: [
-      "Developed web solutions for business operations",
-      "Enhanced digital presence through modern web technologies",
+      "Developed a responsive and intuitive UI for a PDF invoice generation application using HTML and CSS.",
     ],
   },
 ];

@@ -21,7 +21,7 @@ const AboutSection = () => {
     },
     {
       degree: "10th Grade",
-      school: "S.M.S. English Medium School, Brahmavara",
+      school: "S.M.S. English Medium School, Brahmavara, India",
       years: "",
     },
   ];
