@@ -92,7 +92,7 @@ const ProjectsSection = () => {
                 <p className="text-xs font-medium tracking-widest uppercase text-sage mb-2">
                   {project.category}
                 </p>
-                <h3 className="font-heading text-xl text-cream group-hover:text-sage transition-colors">
+                <h3 className="font-heading text-xl text-cream group-hover:text-sage/90 transition-colors">
                   {project.title}
                 </h3>
               </div>
