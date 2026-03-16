@@ -98,8 +98,8 @@ const ExperienceSection = () => {
               <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-sage rounded-full border-2 border-cream/40" />
 
               {/* Content */}
-              <div className={`flex-1 pl-8 md:pl-0 ${index % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                <div className="bg-cream/10 p-6 border border-cream/20 hover:border-cream/50 hover:shadow-[0_0_25px_rgba(74,93,78,0.25)] transition-all duration-300">
+              <div className={`flex-1 pl-8 md:pl-0 md:max-w-[600px] ${index % 2 === 0 ? "md:pr-12 md:text-right md:ml-auto" : "md:pl-12"}`}>
+                <div className="bg-cream/10 p-6 border border-cream/20 hover:border-cream/50 hover:shadow-[0_0_25px_rgba(74,93,78,0.25)] hover:[&_h3]:text-sage hover:[&_span]:text-cream hover:[&_li_span]:text-cream/90 transition-all duration-300">
                   <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
                     <Briefcase size={16} className="text-sage" />
                     <span className="label-text text-sage">{exp.company}</span>
