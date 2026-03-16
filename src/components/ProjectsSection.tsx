@@ -50,6 +50,15 @@ const projects = [
     impact: "Achieved ±2mm measurement accuracy",
     link: "https://github.com/Lisasilva/Distance-Measurement-Using-IR-Sharp-Sensor",
   },
+  {
+    title: "The Warehouse Store Application",
+    category: "Database Systems",
+    description:
+      "A C# Windows Forms e-commerce app with SQL Plus backend, using normalized databases and ER modeling for managing products, carts, inventory, and orders.",
+    tech: ["C#", "Windows Forms", "SQL Plus (Oracle)", "ER Diagrams", "Database Normalization"],
+    impact: "Enabled product browsing, cart, order, and inventory management for customers and admins.",
+    link: "https://github.com/Lisasilva/The-Warehouse-Store-using-C-Sharp",
+  },
 ];
 
 const ProjectsSection = () => {
