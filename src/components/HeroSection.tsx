@@ -75,14 +75,14 @@ const HeroSection = () => {
           >
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-cream text-forest font-medium text-sm tracking-wide hover:bg-cream/90 transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 bg-cream text-forest font-medium text-sm tracking-wide hover:bg-cream/90 transition-colors"
             >
-              View Projects
               <ArrowDown size={16} />
+              View Projects
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
             >
               <Mail size={16} />
               Contact Me
@@ -91,7 +91,7 @@ const HeroSection = () => {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
             >
               <FileText size={16} />
               Resume
@@ -102,7 +102,6 @@ const HeroSection = () => {
                 e.preventDefault();
                 const section = document.getElementById('beyond');
                 if (section) {
-                  const creativeCorner = section.querySelector('h3');
                   const headings = section.querySelectorAll('h3');
                   headings.forEach((h) => {
                     if (h.textContent?.includes('Creative Corner')) {
@@ -111,7 +110,7 @@ const HeroSection = () => {
                   });
                 }
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
             >
               <Palette size={16} />
               My Paintings
