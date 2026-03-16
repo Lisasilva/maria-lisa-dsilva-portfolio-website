@@ -16,7 +16,7 @@ const AboutSection = () => {
     },
     {
       degree: "12th Grade",
-      school: "Madhava Kripa School, Manipal",
+      school: "Madhava Kripa School, Manipal, India",
       years: "",
     },
     {
