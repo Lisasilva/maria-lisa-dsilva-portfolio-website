@@ -85,14 +85,14 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className="group bg-charcoal/50 border border-sage/20 hover:border-sage/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-sage/10 flex flex-col"
+              className="group bg-charcoal/50 border border-sage/20 hover:border-sage/60 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(74,93,78,0.25)] flex flex-col"
             >
               {/* Project Header */}
               <div className="p-6 pb-4">
                 <p className="text-xs font-medium tracking-widest uppercase text-sage mb-2">
                   {project.category}
                 </p>
-                <h3 className="font-heading text-xl text-cream group-hover:text-sage transition-colors">
+                <h3 className="font-heading text-xl text-cream group-hover:text-sage/90 transition-colors">
                   {project.title}
                 </h3>
               </div>
