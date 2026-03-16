@@ -115,7 +115,7 @@ const HeroSection = () => {
               <img
                 src={profileImage}
                 alt="Maria Lisa D Silva"
-                className="w-72 md:w-80 lg:w-96 h-auto object-cover grayscale transition-transform duration-500 group-hover:scale-105 pointer-events-none"
+                className="w-72 md:w-80 lg:w-96 h-auto object-cover transition-transform duration-500 group-hover:scale-105 pointer-events-none"
                 draggable={false}
                 onContextMenu={handleContextMenu}
                 onDragStart={handleDragStart}
