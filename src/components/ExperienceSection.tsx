@@ -3,16 +3,22 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Briefcase, Calendar } from "lucide-react";
 
-const experiences = [
+const experiences: { title: string; company: string; period: string; description: string[]; achievements?: string[] }[] = [
   {
     title: "Data Engineer",
     company: "Genpact",
     period: "Oct 2024 – Dec 2025",
     description: [
-      "Led large-scale Greenplum to Databricks migration for enterprise data platform",
-      "Implemented SparkSQL transformations and Airflow orchestration pipelines",
-      "Designed Medallion Architecture with CI/CD automation",
-      "Achieved 98%+ data accuracy across enterprise-scale data sets",
+      "Contributed to large-scale Databricks migration spanning 35+ domains, 60k+ objects, 15k+ jobs, 3k+ reports, 120+ sources.",
+      "Migrated 900+ Greenplum/PostgreSQL objects to Databricks Enterprise Data Lake using SparkSQL Medallion Architecture.",
+      "Developed PXF/reverse-PXF connectors, views, and DDL scripts enabling ingestion from S3, Oracle, Smartsheet, Box.",
+      "Engineered SparkSQL ETL pipelines supporting scalable ingestion, transformation, and egress across enterprise data domains.",
+      "Re-architected orchestration by migrating Talend TAC workflows to Airflow DAGs with CRON scheduling, GitHub YAML CI/CD, DBeaver metadata.",
+      "Achieved 98%+ data accuracy via log diagnostics, SIT validation, and RCA across distributed Spark ETL pipelines.",
+    ],
+    achievements: [
+      "Awarded Genpact Bronze Performance Excellence for technical ownership and delivery in the migration program.",
+      "Selected Top 20 Performer (<4 YOE); inducted into Technical Leadership Development Program.",
     ],
   },
   {
@@ -20,9 +26,8 @@ const experiences = [
     company: "Genpact",
     period: "Feb 2024 – Jul 2024",
     description: [
-      "Developed NLP-based document de-duplication pipeline",
-      "Built BI dashboard with ML-driven predictions",
-      "Worked with cutting-edge generative AI technologies",
+      "Built an AI-powered document deduplication system using NLTK, TF-IDF, LLMs, Sentence Transformers, and the Affinity Propagation algorithm, reducing average document length by 54.6%, eliminating .docx duplicates (0.97 semantic similarity), and improving data clarity.",
+      "Developed a Vehicle Financing Performance Dashboard integrating Python ML models (85% accuracy) with SQL/DAX-driven data cleaning, feature engineering, visualization, and KPI tracking, increasing loan approvals by 20% while reducing defaults by 25%.",
     ],
   },
   {
@@ -39,8 +44,8 @@ const experiences = [
     company: "NMBR Systems",
     period: "Jun 2023 – Jul 2023",
     description: [
-      "Contributed to software development projects",
-      "Gained hands-on experience with enterprise software development",
+      "Built a Java/Spring Boot management system integrating MySQL, REST APIs, and Postman testing for reliable data operations.",
+      "Optimized SQL queries, implemented JPA/Hibernate ORM with Java Streams to boost CRUD efficiency, workflows, and software efficiency.",
     ],
   },
   {
@@ -48,8 +53,7 @@ const experiences = [
     company: "D'Souza Metal Cutting Pvt Ltd",
     period: "Jun 2022 – Aug 2022",
     description: [
-      "Developed web solutions for business operations",
-      "Enhanced digital presence through modern web technologies",
+      "Developed a responsive and intuitive UI for a PDF invoice generation application using HTML and CSS.",
     ],
   },
 ];
@@ -115,6 +119,19 @@ const ExperienceSection = () => {
                       </li>
                     ))}
                   </ul>
+                  {exp.achievements && (
+                    <div className="mt-4 pt-3 border-t border-cream/10">
+                      <p className={`text-sage font-medium text-sm mb-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>Achievements</p>
+                      <ul className={`space-y-2 text-cream/70 text-sm ${index % 2 === 0 ? "md:text-right" : ""}`}>
+                        {exp.achievements.map((item, i) => (
+                          <li key={i} className={`flex items-start gap-2 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+                            <span className="text-sage mt-1.5">★</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
 
