@@ -10,18 +10,18 @@ const AboutSection = () => {
   const education = [
     {
       degree: "B.Tech in Computer & Communication Engineering",
-      school: "Manipal Institute of Technology",
+      school: "Manipal Institute of Technology, Manipal, India",
       minor: "Minor in Big Data Analytics",
       years: "2020–2024",
     },
     {
       degree: "12th Grade",
-      school: "Madhava Kripa School, Manipal",
+      school: "Madhava Kripa School, Manipal, India",
       years: "",
     },
     {
       degree: "10th Grade",
-      school: "S.M.S. English Medium School, Brahmavara",
+      school: "S.M.S. English Medium School, Brahmavara, India",
       years: "",
     },
   ];
