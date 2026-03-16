@@ -44,8 +44,8 @@ const experiences = [
     company: "NMBR Systems",
     period: "Jun 2023 – Jul 2023",
     description: [
-      "Contributed to software development projects",
-      "Gained hands-on experience with enterprise software development",
+      "Built a Java/Spring Boot management system integrating MySQL, REST APIs, and Postman testing for reliable data operations.",
+      "Optimized SQL queries, implemented JPA/Hibernate ORM with Java Streams to boost CRUD efficiency, workflows, and software efficiency.",
     ],
   },
   {
