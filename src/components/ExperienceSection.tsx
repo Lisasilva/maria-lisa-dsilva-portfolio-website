@@ -9,10 +9,16 @@ const experiences = [
     company: "Genpact",
     period: "Oct 2024 – Dec 2025",
     description: [
-      "Led large-scale Greenplum to Databricks migration for enterprise data platform",
-      "Implemented SparkSQL transformations and Airflow orchestration pipelines",
-      "Designed Medallion Architecture with CI/CD automation",
-      "Achieved 98%+ data accuracy across enterprise-scale data sets",
+      "Contributed to large-scale Databricks migration spanning 35+ domains, 60k+ objects, 15k+ jobs, 3k+ reports, 120+ sources.",
+      "Migrated 900+ Greenplum/PostgreSQL objects to Databricks Enterprise Data Lake using SparkSQL Medallion Architecture.",
+      "Developed PXF/reverse-PXF connectors, views, and DDL scripts enabling ingestion from S3, Oracle, Smartsheet, Box.",
+      "Engineered SparkSQL ETL pipelines supporting scalable ingestion, transformation, and egress across enterprise data domains.",
+      "Re-architected orchestration by migrating Talend TAC workflows to Airflow DAGs with CRON scheduling, GitHub YAML CI/CD, DBeaver metadata.",
+      "Achieved 98%+ data accuracy via log diagnostics, SIT validation, and RCA across distributed Spark ETL pipelines.",
+    ],
+    achievements: [
+      "Awarded Genpact Bronze Performance Excellence for technical ownership and delivery in the migration program.",
+      "Selected Top 20 Performer (<4 YOE); inducted into Technical Leadership Development Program.",
     ],
   },
   {
