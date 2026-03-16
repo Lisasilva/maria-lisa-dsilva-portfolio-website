@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Briefcase, Calendar } from "lucide-react";
 
-const experiences = [
+const experiences: { title: string; company: string; period: string; description: string[]; achievements?: string[] }[] = [
   {
     title: "Data Engineer",
     company: "Genpact",
