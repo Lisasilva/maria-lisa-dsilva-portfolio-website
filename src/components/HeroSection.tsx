@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, FileText, Mail } from "lucide-react";
+import { ArrowDown, FileText, Mail, Palette } from "lucide-react";
 import { useCallback } from "react";
 import profileImage from "@/assets/profile-portrait.png";
 
