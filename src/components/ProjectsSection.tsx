@@ -21,7 +21,7 @@ const projects = [
       "Created an intelligent document processing pipeline using NLP and GPT to identify and remove duplicate documents in large datasets.",
     tech: ["Python", "NLP", "GPT API", "Vector Embeddings"],
     impact: "Reduced document redundancy by 40%",
-    link: null,
+    link: "https://github.com/Lisasilva/AI-Powered-Document-De-Duplication-and-Consolidation",
   },
   {
     title: "Crime Data Mining & Analysis",
