@@ -96,6 +96,26 @@ const HeroSection = () => {
               <FileText size={16} />
               Resume
             </a>
+            <a
+              href="#beyond"
+              onClick={(e) => {
+                e.preventDefault();
+                const section = document.getElementById('beyond');
+                if (section) {
+                  const creativeCorner = section.querySelector('h3');
+                  const headings = section.querySelectorAll('h3');
+                  headings.forEach((h) => {
+                    if (h.textContent?.includes('Creative Corner')) {
+                      h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  });
+                }
+              }}
+              className="inline-flex items-center gap-2 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
+            >
+              <Palette size={16} />
+              My Paintings
+            </a>
           </motion.div>
         </motion.div>
 
