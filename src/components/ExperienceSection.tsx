@@ -119,6 +119,19 @@ const ExperienceSection = () => {
                       </li>
                     ))}
                   </ul>
+                  {exp.achievements && (
+                    <div className="mt-4 pt-3 border-t border-cream/10">
+                      <p className={`text-sage font-medium text-sm mb-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>Achievements</p>
+                      <ul className={`space-y-2 text-cream/70 text-sm ${index % 2 === 0 ? "md:text-right" : ""}`}>
+                        {exp.achievements.map((item, i) => (
+                          <li key={i} className={`flex items-start gap-2 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
+                            <span className="text-sage mt-1.5">★</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
 
