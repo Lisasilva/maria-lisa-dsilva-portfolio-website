@@ -26,9 +26,8 @@ const experiences = [
     company: "Genpact",
     period: "Feb 2024 – Jul 2024",
     description: [
-      "Developed NLP-based document de-duplication pipeline",
-      "Built BI dashboard with ML-driven predictions",
-      "Worked with cutting-edge generative AI technologies",
+      "Built an AI-powered document deduplication system using NLTK, TF-IDF, LLMs, Sentence Transformers, and the Affinity Propagation algorithm, reducing average document length by 54.6%, eliminating .docx duplicates (0.97 semantic similarity), and improving data clarity.",
+      "Developed a Vehicle Financing Performance Dashboard integrating Python ML models (85% accuracy) with SQL/DAX-driven data cleaning, feature engineering, visualization, and KPI tracking, increasing loan approvals by 20% while reducing defaults by 25%.",
     ],
   },
   {
