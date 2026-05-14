@@ -30,6 +30,14 @@ const certifications = [
     link: "https://credentials.databricks.com/cc3eb4d9-5c83-4c5e-9328-07d9f4c07717#acc.R7lYtau0",
   },
   {
+    name: "Academy Accreditation - AI Agent Fundamentals",
+    issuer: "Databricks",
+    issueDate: "Apr 2026",
+    expirationDate: null,
+    credentialId: "",
+    link: "https://credentials.databricks.com/d345c748-60db-4eab-9d8d-071e745af393#acc.y4LHh5xq",
+  },
+  {
     name: "SnowPro Core Certification",
     issuer: "Snowflake",
     issueDate: "Nov 2025",
