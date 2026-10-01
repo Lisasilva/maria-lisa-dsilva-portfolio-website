@@ -6,6 +6,15 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
+    title: "HarbourOS",
+    category: "Data Engineering",
+    description:
+      "Built a live data pipeline that converts Norwegian coastal AIS signals into confidence-scored port-call events, visualized through a public dashboard.",
+    tech: ["Python", "DuckDB", "dbt", "GitHub Actions", "Dagster", "MotherDuck", "Claude Code"],
+    impact: "Detected 25,000+ port calls with a confidence score on every one",
+    link: "https://github.com/Lisasilva/HarbourOS",
+  },
+  {
     title: "Vehicle Financing BI Dashboard",
     category: "BI & Analytics",
     description:
@@ -31,6 +40,15 @@ const projects = [
     tech: ["Python", "Scikit-learn", "Clustering", "Data Visualization"],
     impact: "Identified 15+ crime pattern clusters",
     link: "https://github.com/Lisasilva/Crime-Analysis-in-India",
+  },
+  {
+    title: "Personal Portfolio Website",
+    category: "Web Development",
+    description:
+      "Built a responsive personal portfolio website using React and TypeScript to showcase data engineering projects, technical skills, certifications, and professional journey.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui", "Lovable", "Netlify", "GitHub"],
+    impact: "Created a professional online presence showcasing projects, certifications, and technical experience for recruiters and hiring teams.",
+    link: "https://github.com/Lisasilva/maria-lisa-dsilva-portfolio-website",
   },
   {
     title: "Supply Chain Management Platform",
