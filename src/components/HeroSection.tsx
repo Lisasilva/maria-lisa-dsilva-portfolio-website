@@ -44,6 +44,7 @@ const HeroSection = () => {
             Maria Lisa
             <br />
             D Silva
+            <span className="sr-only"> — Data Engineer Portfolio</span>
           </motion.h1>
 
           <motion.p

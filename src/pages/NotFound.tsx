@@ -6,6 +6,23 @@ const NotFound = () => {
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
+    const prevTitle = document.title;
+    const desc = document.querySelector('meta[name="description"]');
+    const prevDesc = desc?.getAttribute("content") ?? "";
+    document.title = "Page Not Found | Maria Lisa D Silva";
+    desc?.setAttribute("content", "The page you are looking for does not exist. Return to Maria Lisa D Silva's data engineering portfolio.");
+    let robots = document.querySelector('meta[name="robots"]');
+    if (!robots) {
+      robots = document.createElement("meta");
+      robots.setAttribute("name", "robots");
+      document.head.appendChild(robots);
+    }
+    robots.setAttribute("content", "noindex");
+    return () => {
+      document.title = prevTitle;
+      desc?.setAttribute("content", prevDesc);
+      robots?.remove();
+    };
   }, [location.pathname]);
 
   return (
