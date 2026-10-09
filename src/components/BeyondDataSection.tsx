@@ -13,7 +13,7 @@ import furyWavesImg from "@/assets/paintings/fury-waves.jpeg";
 const languages = [
   { language: "English", level: "Fluent" },
   { language: "Hindi", level: "Fluent" },
-  { language: "Kannada", level: "Native" },
+  { language: "Kannada", level: "Fluent" },
   { language: "Konkani", level: "Native" },
   { language: "French", level: "Beginner" },
 ];
