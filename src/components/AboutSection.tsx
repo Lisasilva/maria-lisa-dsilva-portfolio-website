@@ -27,7 +27,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-background" ref={ref}>
+    <section id="about" className="portfolio-accent section-padding bg-background" ref={ref}>
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -96,12 +96,12 @@ const AboutSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="border-l-2 border-forest/20 pl-6 py-2"
+                  className="border-l-2 accent-edge pl-6 py-2"
                 >
                   <h4 className="font-medium text-lg">{edu.degree}</h4>
                   <p className="text-muted-foreground">{edu.school}</p>
                   {edu.minor && (
-                    <p className="text-sm text-forest">{edu.minor}</p>
+                    <p className="text-sm accent-text">{edu.minor}</p>
                   )}
                   {edu.years && (
                     <p className="text-sm text-muted-foreground mt-1">
