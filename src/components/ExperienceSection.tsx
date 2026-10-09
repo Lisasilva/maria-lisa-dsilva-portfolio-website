@@ -11,16 +11,11 @@ const experiences: { title: string; company: string; period: string; description
     company: "Genpact",
     period: "Oct 2024 – Dec 2025",
     description: [
-      "Contributed to large-scale Databricks migration spanning 35+ domains, 60k+ objects, 15k+ jobs, 3k+ reports, 120+ sources.",
-      "Migrated 900+ Greenplum/PostgreSQL objects to Databricks Enterprise Data Lake using SparkSQL Medallion Architecture.",
-      "Developed PXF/reverse-PXF connectors, views, and DDL scripts enabling ingestion from S3, Oracle, Smartsheet, Box.",
-      "Engineered SparkSQL ETL pipelines supporting scalable ingestion, transformation, and egress across enterprise data domains.",
-      "Re-architected orchestration by migrating Talend TAC workflows to Airflow DAGs with CRON scheduling, GitHub YAML CI/CD, DBeaver metadata.",
-      "Achieved 98%+ data accuracy via log diagnostics, SIT validation, and RCA across distributed Spark ETL pipelines.",
-    ],
-    achievements: [
-      "Awarded Genpact Bronze Performance Excellence for technical ownership and delivery in the migration program.",
-      "Selected Top 20 Performer (<4 YOE); inducted into Technical Leadership Development Program.",
+      "Engineered Spark SQL ELT migrations of 900+ Greenplum/PostgreSQL objects across 15+ domains to Databricks Lakehouse (Medallion Architecture), owning 300+ end to end: DDL conversion, schema mapping, transformations, views, data validation.",
+      "Migrated PXF/reverse-PXF external tables and data exchange workflows, recreating Greenplum read/write patterns using Spark SQL, Databricks external tables and AWS S3 storage across Oracle, MySQL, Smartsheet, Box and other enterprise sources.",
+      "Modernized legacy Talend TAC ingestion/egress workflows into scheduled Airflow DAGs with YAML-based GitHub CI/CD and DBeaver metadata configurations, boosting pipeline automation by ~80%.",
+      "Achieved 98%+ data accuracy via Spark pipeline validation, SQL reconciliation, log diagnostics, root cause analysis (RCA) and SIT testing, resolving schema, transformation and data issues with business stakeholders.",
+      "Awarded Bronze Performance Excellence and selected as a Top 20 Performer. Inducted into the Technical Leadership Development program.",
     ],
   },
   {
@@ -38,8 +33,8 @@ const experiences: { title: string; company: string; period: string; description
     company: "Genpact",
     period: "Feb 2024 – Jul 2024",
     description: [
-      "Built an AI-powered document deduplication system using NLTK, TF-IDF, LLMs, Sentence Transformers, and the Affinity Propagation algorithm, reducing average document length by 54.6%, eliminating .docx duplicates (0.97 semantic similarity), and improving data clarity.",
-      "Developed a Vehicle Financing Performance Dashboard integrating Python ML models (85% accuracy) with SQL/DAX-driven data cleaning, feature engineering, visualization, and KPI tracking, increasing loan approvals by 20% while reducing defaults by 25%.",
+      "Built an AI-powered document deduplication system (NLTK, TF-IDF, LLMs, Sentence Transformers, Affinity Propagation), reducing average document length by 54.6% and eliminating .docx duplicates (0.97 semantic similarity).",
+      "Developed a Vehicle Financing Performance Dashboard with Python ML models (85% accuracy), SQL/DAX data cleaning, feature engineering, visualization and KPIs, raising loan approvals by 20% and cutting defaults by 25%.",
     ],
   },
   {
@@ -47,8 +42,7 @@ const experiences: { title: string; company: string; period: string; description
     company: "Bazaarvoice",
     period: "Mar 2023 – Dec 2023",
     description: [
-      "Represented Bazaarvoice on campus, promoting brand awareness",
-      "Organized tech events and workshops for students",
+      "Represented Bazaarvoice on campus by promoting brand awareness, organizing tech events and workshops for students.",
     ],
   },
   {
@@ -56,8 +50,8 @@ const experiences: { title: string; company: string; period: string; description
     company: "NMBR Systems",
     period: "Jun 2023 – Jul 2023",
     description: [
-      "Built a Java/Spring Boot management system integrating MySQL, REST APIs, and Postman testing for reliable data operations.",
-      "Optimized SQL queries, implemented JPA/Hibernate ORM with Java Streams to boost CRUD efficiency, workflows, and software efficiency.",
+      "Built a Java/Spring Boot management system with MySQL, REST APIs and Postman-tested CRUD operations.",
+      "Optimized SQL queries and implemented JPA/Hibernate ORM with Java Streams, reducing manual effort.",
     ],
   },
   {
@@ -65,7 +59,7 @@ const experiences: { title: string; company: string; period: string; description
     company: "D'Souza Metal Cutting Pvt Ltd",
     period: "Jun 2022 – Aug 2022",
     description: [
-      "Developed a responsive and intuitive UI for a PDF invoice generation application using HTML and CSS.",
+      "Developed a responsive HTML/CSS UI for PDF invoice generation, cutting manual processing time by 50%.",
     ],
   },
 ];
