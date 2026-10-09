@@ -3,6 +3,8 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import peakyManImg from "@/assets/backgrounds/peaky-man.jpg";
+import PaintingBackdrop from "@/components/PaintingBackdrop";
 
 const projects = [
   {
@@ -85,14 +87,15 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="portfolio-accent section-padding bg-forest" ref={ref}>
-      <div className="container-narrow">
+      <PaintingBackdrop src={peakyManImg} position="center 30%" />
+      <div className="container-narrow relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="label-text accent-text mb-4">Featured Work</p>
+          <p className="label-text accent-text mb-4">04 · Featured Work</p>
           <h2 className="editorial-heading text-cream">Projects</h2>
         </motion.div>
 
@@ -103,21 +106,21 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className="group h-full accent-card border transition-all duration-300 hover:-translate-y-2   flex flex-col"
+              className="group h-full accent-card border transition-all duration-300 hover:-translate-y-2 flex flex-col"
             >
               {/* Project Header */}
               <div className="p-6 pb-4">
                 <p className="text-xs font-medium tracking-widest uppercase accent-text mb-2">
                   {project.category}
                 </p>
-                <h3 className="font-heading text-xl text-cream  transition-colors">
+                <h3 className="font-heading text-xl card-title">
                   {project.title}
                 </h3>
               </div>
 
               {/* Project Content */}
               <div className="px-6 pb-6 flex-grow flex flex-col">
-                <p className="text-cream/70 text-sm leading-relaxed mb-4">
+                <p className="card-body text-sm leading-relaxed mb-4">
                   {project.description}
                 </p>
 
@@ -137,7 +140,7 @@ const ProjectsSection = () => {
                 <div className="pt-4 border-t accent-edge mb-4">
                   <p className="text-sm">
                     <span className="accent-text font-medium">Impact:</span>{" "}
-                    <span className="text-cream/70">{project.impact}</span>
+                    <span className="card-body">{project.impact}</span>
                   </p>
                 </div>
 
@@ -165,7 +168,7 @@ const ProjectsSection = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full accent-edge text-cream/50 cursor-not-allowed"
+                    className="w-full accent-edge card-muted bg-transparent cursor-not-allowed"
                     disabled
                   >
                     <Github size={16} className="mr-2" />

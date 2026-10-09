@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, Calendar } from "lucide-react";
+import { Award, Briefcase } from "lucide-react";
+import furyWavesImg from "@/assets/backgrounds/fury-waves.jpg";
+import PaintingBackdrop from "@/components/PaintingBackdrop";
 
 const experiences: { title: string; company: string; period: string; description: string[]; achievements?: string[] }[] = [
   {
@@ -68,21 +70,21 @@ const ExperienceSection = () => {
       className="portfolio-accent section-padding bg-forest text-primary-foreground"
       ref={ref}
     >
-      <div className="container-narrow">
+      <PaintingBackdrop src={furyWavesImg} position="center 55%" />
+      <div className="container-narrow relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="label-text accent-text mb-4">Professional Journey</p>
+          <p className="label-text accent-text mb-4">02 · Professional Journey</p>
           <h2 className="editorial-heading text-cream">Experience</h2>
         </motion.div>
 
-        {/* Vertical Timeline */}
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 accent-line" />
+        {/* Single-column timeline: dates on the left rail, roles on the right */}
+        <div className="relative max-w-4xl mx-auto">
+          <div className="absolute left-[7px] md:left-[199px] top-0 bottom-0 w-px accent-line" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -90,53 +92,42 @@ const ExperienceSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className={`relative flex flex-col md:flex-row gap-8 mb-12 last:mb-0 ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              }`}
+              className="relative grid md:grid-cols-[176px_1fr] gap-3 md:gap-12 pl-8 md:pl-0 mb-10 last:mb-0"
             >
-              {/* Timeline Dot */}
-              <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-3 h-3 accent-dot rounded-full border-2" />
-
-              {/* Content */}
-              <div className={`flex-1 pl-8 md:pl-0 md:max-w-[600px] ${index % 2 === 0 ? "md:pr-12 md:text-right md:ml-auto" : "md:pl-12"}`}>
-                <div className="accent-card p-6 border   transition-all duration-300">
-                  <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                    <Briefcase size={16} className="accent-text" />
-                    <span className="label-text accent-text">{exp.company}</span>
-                  </div>
-                  <h3 className="font-heading text-xl md:text-2xl text-cream mb-2">
-                    {exp.title}
-                  </h3>
-                  <div className={`flex items-center gap-2 text-cream/60 text-sm mb-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                    <Calendar size={14} />
-                    <span>{exp.period}</span>
-                  </div>
-                  <ul className={`space-y-2 text-cream/70 text-sm ${index % 2 === 0 ? "md:text-right" : ""}`}>
-                    {exp.description.map((item, i) => (
-                      <li key={i} className={`flex items-start gap-2 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
-                        <span className="accent-text mt-1.5">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {exp.achievements && (
-                    <div className="mt-4 pt-3 border-t accent-edge">
-                      <p className={`accent-text font-medium text-sm mb-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>Achievements</p>
-                      <ul className={`space-y-2 text-cream/70 text-sm ${index % 2 === 0 ? "md:text-right" : ""}`}>
-                        {exp.achievements.map((item, i) => (
-                          <li key={i} className={`flex items-start gap-2 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
-                            <span className="accent-text mt-1.5">★</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
+              <div className="md:text-right md:pt-6">
+                <p className="font-heading text-lg text-cream/90 leading-snug">{exp.period}</p>
               </div>
 
-              {/* Spacer for alternating layout */}
-              <div className="hidden md:block flex-1" />
+              <span className="absolute left-0 md:left-[192px] top-1.5 md:top-8 w-[15px] h-[15px] rounded-full accent-dot border-[3px]" />
+
+              <div className="accent-card p-6 md:p-7 border">
+                <div className="flex items-center gap-2 mb-2">
+                  <Briefcase size={15} className="accent-text" />
+                  <span className="label-text accent-text">{exp.company}</span>
+                </div>
+                <h3 className="font-heading text-xl md:text-2xl card-title mb-4">{exp.title}</h3>
+                <ul className="space-y-2 card-body text-sm leading-relaxed">
+                  {exp.description.map((item, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="accent-gold mt-[7px] w-1 h-1 rounded-full bg-current shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                {exp.achievements && (
+                  <div className="mt-5 pt-4 border-t accent-edge">
+                    <p className="label-text accent-gold mb-3">Achievements</p>
+                    <ul className="space-y-2 card-body text-sm leading-relaxed">
+                      {exp.achievements.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <Award size={14} className="accent-gold mt-0.5 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>

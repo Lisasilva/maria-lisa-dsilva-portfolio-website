@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { GraduationCap, Palette, Languages } from "lucide-react";
+import redBloomsImg from "@/assets/backgrounds/red-blooms.jpg";
+import PaintingBackdrop from "@/components/PaintingBackdrop";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -28,14 +30,15 @@ const AboutSection = () => {
 
   return (
     <section id="about" className="portfolio-accent section-padding bg-background" ref={ref}>
-      <div className="container-narrow">
+      <PaintingBackdrop src={redBloomsImg} side="right" position="center" />
+      <div className="container-narrow relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="label-text mb-4">Get to Know Me</p>
+          <p className="label-text mb-4">01 · Get to Know Me</p>
           <h2 className="editorial-heading">About</h2>
         </motion.div>
 
