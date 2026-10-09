@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useCallback } from "react";
-import { Globe, Award, Palette, ExternalLink } from "lucide-react";
+import { Globe, Award, ExternalLink } from "lucide-react";
 
 import silentMeadowImg from "@/assets/gallery/silent-meadow.jpg";
 import peakyManImg from "@/assets/gallery/peaky-man.jpg";
@@ -73,17 +73,13 @@ const BeyondDataSection = () => {
         >
           <div className="grid md:grid-cols-[1fr_1.1fr] gap-6 md:gap-16 items-end mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <Palette size={20} className="accent-text" />
-                <span className="label-text">Creative Corner</span>
-              </div>
               <h3 className="font-heading text-4xl md:text-5xl leading-tight">
                 I paint too, <em className="accent-text">you know.</em>
               </h3>
             </div>
             <p className="body-large text-muted-foreground">
-              Noticed those light background paintings on every section? I
-              painted 'em all!! Here they are all clear, without the haze.
+              Noticed those light background paintings in every section? I
+              painted 'em all!! Here they are, clear and without the haze :)
             </p>
           </div>
 
