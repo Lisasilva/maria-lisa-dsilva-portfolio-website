@@ -1,3 +1,4 @@
+import { getResumeHref } from "@/lib/resume";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -25,7 +26,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="section-padding bg-forest text-primary-foreground"
+      className="portfolio-accent section-padding bg-forest text-primary-foreground"
       ref={ref}
     >
       <div className="container-narrow">
@@ -35,7 +36,7 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="label-text text-sage mb-4">Get In Touch</p>
+          <p className="label-text accent-text mb-4">Get In Touch</p>
           <h2 className="editorial-heading text-cream">Contact</h2>
           <p className="mt-4 body-large text-cream/70 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities in Data Engineering,
@@ -50,7 +51,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-3 px-8 py-4 bg-cream text-forest font-medium text-lg hover:bg-cream/90 transition-colors"
+            className="inline-flex items-center gap-3 px-8 py-4 accent-button font-medium text-lg  transition-colors"
           >
             <Mail size={24} />
             Email Me
@@ -69,30 +70,30 @@ const ContactSection = () => {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-6 py-3 bg-cream/5 border border-cream/10 hover:border-cream/30 transition-colors group"
+                className="flex items-center gap-3 px-6 py-3 accent-outline border transition-colors group"
               >
                 <link.icon
                   size={20}
-                  className="text-sage group-hover:text-cream transition-colors"
+                  className="accent-text group-hover:text-inherit transition-colors"
                 />
-                <span className="text-cream">{link.label}</span>
+                <span className="text-inherit">{link.label}</span>
               </a>
             ))}
           </motion.div>
 
           {/* Resume Download */}
           <motion.a
-            href="/resume.pdf"
+            href={getResumeHref()}
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="inline-flex items-center gap-3 px-6 py-4 border border-cream/30 text-cream hover:bg-cream/10 transition-colors"
+            className="inline-flex items-center gap-3 px-6 py-4 border accent-outline  transition-colors"
           >
             <FileText size={20} />
             <span>
-              <p className="text-sm text-sage">Download</p>
+              <p className="text-sm text-inherit">Download</p>
               <p className="font-medium">Resume / CV</p>
             </span>
           </motion.a>

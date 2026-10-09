@@ -13,7 +13,7 @@ import furyWavesImg from "@/assets/paintings/fury-waves.jpeg";
 const languages = [
   { language: "English", level: "Fluent" },
   { language: "Hindi", level: "Fluent" },
-  { language: "Kannada", level: "Native" },
+  { language: "Kannada", level: "Fluent" },
   { language: "Konkani", level: "Native" },
   { language: "French", level: "Beginner" },
 ];
@@ -46,7 +46,7 @@ const BeyondDataSection = () => {
   return (
     <section
       id="beyond"
-      className="section-padding bg-background"
+      className="portfolio-accent section-padding bg-background"
       ref={ref}
     >
       <div className="container-narrow">
@@ -68,7 +68,7 @@ const BeyondDataSection = () => {
           className="mb-20"
         >
           <div className="flex items-center gap-3 mb-8">
-            <Globe size={24} className="text-forest" />
+            <Globe size={24} className="accent-text" />
             <h3 className="font-heading text-2xl md:text-3xl">Languages I Speak</h3>
           </div>
 
@@ -79,7 +79,7 @@ const BeyondDataSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="bg-forest/10 border border-forest/20 p-5 text-center hover:border-forest/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default"
+                className="accent-card border p-5 text-center hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-default"
               >
                 <p className="font-heading text-lg font-medium text-foreground">
                   {lang.language}
@@ -98,11 +98,11 @@ const BeyondDataSection = () => {
           className="mb-20"
         >
           <div className="flex items-center gap-3 mb-8">
-            <Award size={24} className="text-forest" />
+            <Award size={24} className="accent-text" />
             <h3 className="font-heading text-2xl md:text-3xl">NCC Experience</h3>
           </div>
 
-          <div className="bg-forest/10 border border-forest/20 p-8 md:p-10">
+          <div className="accent-card border p-8 md:p-10">
             <p className="body-large text-muted-foreground max-w-2xl">
               Former member of the National Cadet Corps (NCC) (2015–2017). The experience strengthened my discipline, leadership, and teamwork while training me in structured decision-making, responsibility, and performing effectively under pressure.
             </p>
@@ -110,7 +110,7 @@ const BeyondDataSection = () => {
               href="/NCC.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 text-forest font-medium hover:underline transition-all"
+              className="inline-flex items-center gap-2 mt-6 accent-text font-medium hover:underline transition-all"
             >
               <span>View NCC Certificate</span>
               <ExternalLink size={16} />
@@ -125,7 +125,7 @@ const BeyondDataSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="flex items-center gap-3 mb-4">
-            <Palette size={24} className="text-forest" />
+            <Palette size={24} className="accent-text" />
             <h3 className="font-heading text-2xl md:text-3xl">Creative Corner</h3>
           </div>
 
@@ -161,7 +161,7 @@ const BeyondDataSection = () => {
                   />
                   
                   {/* Hover overlay with title */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pointer-events-none">
+                  <div className="absolute inset-0 accent-art-overlay opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end justify-center pointer-events-none">
                     <div className="p-6 text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                       <p className="font-heading text-xl md:text-2xl text-cream font-medium tracking-wide">
                         {painting.title}
@@ -170,7 +170,7 @@ const BeyondDataSection = () => {
                   </div>
                   
                   {/* Subtle glow effect on hover */}
-                  <div className="absolute inset-0 shadow-[inset_0_0_30px_rgba(74,93,78,0.3)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 accent-art-glow opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 </div>
               </motion.div>
             ))}

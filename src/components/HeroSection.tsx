@@ -1,3 +1,4 @@
+import { getResumeHref } from "@/lib/resume";
 import { motion } from "framer-motion";
 import { ArrowDown, FileText, Mail, Palette } from "lucide-react";
 import { useCallback } from "react";
@@ -19,7 +20,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen relative flex items-center bg-forest"
+      className="portfolio-accent min-h-screen relative flex items-center bg-forest"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -51,7 +52,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-sage text-2xl md:text-3xl font-heading tracking-wide mb-8"
+            className="accent-text text-2xl md:text-3xl font-heading tracking-wide mb-8"
           >
             Data Engineer | Dubai, UAE
           </motion.p>
@@ -76,23 +77,23 @@ const HeroSection = () => {
           >
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 bg-cream text-forest font-medium text-sm tracking-wide hover:bg-cream/90 transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 accent-button font-medium text-sm tracking-wide  transition-colors"
             >
               <ArrowDown size={16} />
               View Projects
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border accent-outline font-medium text-sm tracking-wide  transition-colors"
             >
               <Mail size={16} />
               Contact Me
             </a>
             <a
-              href="/resume.pdf"
+              href={getResumeHref()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border accent-outline font-medium text-sm tracking-wide  transition-colors"
             >
               <FileText size={16} />
               Resume
@@ -111,7 +112,7 @@ const HeroSection = () => {
                   });
                 }
               }}
-              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border border-cream/30 text-cream font-medium text-sm tracking-wide hover:bg-cream/10 transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border accent-outline font-medium text-sm tracking-wide  transition-colors"
             >
               <Palette size={16} />
               My Paintings
@@ -130,7 +131,7 @@ const HeroSection = () => {
             className="relative group cursor-default select-none"
             onContextMenu={handleContextMenu}
           >
-            <div className="absolute -inset-4 bg-sage/20 -z-10 transition-all duration-500 group-hover:bg-sage/30 group-hover:shadow-[0_0_40px_rgba(74,93,78,0.3)]" />
+            <div className="absolute -inset-4 accent-frame -z-10 transition-all duration-500" />
             <div className="overflow-hidden">
               <img
                 src={profileImage}
