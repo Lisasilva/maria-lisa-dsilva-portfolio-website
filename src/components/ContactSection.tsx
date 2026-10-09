@@ -32,7 +32,7 @@ const ContactSection = () => {
       ref={ref}
     >
       <PaintingBackdrop src={sunsetMeadowImg} position="center 70%" />
-      <div className="container-narrow relative z-10">
+      <div className="container-wide relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -47,14 +47,14 @@ const ContactSection = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Primary: email */}
           <motion.a
             href="mailto:marialisa917@gmail.com"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="group flex flex-col sm:flex-row items-center justify-between gap-4 p-6 md:p-8 accent-card border hover:-translate-y-1"
+            className="group flex flex-col sm:flex-row items-center justify-between gap-4 p-6 md:p-8 accent-card border hover:-translate-y-2"
           >
             <span className="flex items-center gap-4">
               <span className="w-12 h-12 rounded-full accent-button accent-button--solid border flex items-center justify-center shrink-0">
@@ -91,7 +91,7 @@ const ContactSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.35 + index * 0.1 }}
-                className="group flex items-center gap-4 p-5 accent-card border hover:-translate-y-1"
+                className="group flex items-center gap-4 p-5 accent-card border hover:-translate-y-2"
               >
                 <span className="w-10 h-10 rounded-full border accent-outline flex items-center justify-center shrink-0 group-hover:border-[hsl(var(--gold))]">
                   <link.icon size={18} />

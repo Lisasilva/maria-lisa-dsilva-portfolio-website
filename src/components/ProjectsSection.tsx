@@ -88,7 +88,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="portfolio-accent section-padding bg-forest" ref={ref}>
       <PaintingBackdrop src={peakyManImg} position="center 30%" />
-      <div className="container-narrow relative z-10">
+      <div className="container-wide relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

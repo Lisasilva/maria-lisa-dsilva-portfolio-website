@@ -1,17 +1,10 @@
 import { getResumeHref } from "@/lib/resume";
 import { motion } from "framer-motion";
-import { ArrowDown, FileText, Mail, Palette } from "lucide-react";
+import { ArrowDown, FileText, Mail } from "lucide-react";
 import { useCallback } from "react";
 import profileImage from "@/assets/profile-portrait.png";
 import forestMistImg from "@/assets/backgrounds/forest-mist.jpg";
 import PaintingBackdrop from "@/components/PaintingBackdrop";
-
-const highlights = [
-  { value: "35+", label: "data domains migrated" },
-  { value: "900+", label: "objects moved to Databricks" },
-  { value: "98%", label: "data accuracy" },
-  { value: "63.6M", label: "records reconciled" },
-];
 
 const HeroSection = () => {
   // Prevent right-click context menu
@@ -33,7 +26,7 @@ const HeroSection = () => {
     >
       <PaintingBackdrop src={forestMistImg} position="center 40%" />
 
-      <div className="container-narrow relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-32">
+      <div className="container-wide relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center py-32">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,18 +71,18 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1 }}
-            className="flex flex-wrap gap-4"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-xl"
           >
             <a
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 accent-button font-medium text-sm tracking-wide transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 border accent-outline font-medium text-sm tracking-wide transition-colors"
             >
               <ArrowDown size={16} />
               View Projects
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border accent-outline font-medium text-sm tracking-wide transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 border accent-outline font-medium text-sm tracking-wide transition-colors"
             >
               <Mail size={16} />
               Contact Me
@@ -98,42 +91,12 @@ const HeroSection = () => {
               href={getResumeHref()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border accent-outline font-medium text-sm tracking-wide transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 border accent-outline font-medium text-sm tracking-wide transition-colors"
             >
               <FileText size={16} />
               Resume
             </a>
-            <a
-              href="#beyond"
-              onClick={(e) => {
-                e.preventDefault();
-                const section = document.getElementById('beyond');
-                if (section) {
-                  document.getElementById('creative-corner')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-              }}
-              className="inline-flex items-center justify-center gap-2 w-44 px-6 py-3 border accent-outline font-medium text-sm tracking-wide transition-colors"
-            >
-              <Palette size={16} />
-              My Paintings
-            </a>
           </motion.div>
-
-          {/* Headline numbers */}
-          <motion.dl
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="mt-12 pt-8 border-t accent-edge grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl"
-          >
-            {highlights.map((item) => (
-              <div key={item.label}>
-                <dt className="sr-only">{item.label}</dt>
-                <dd className="font-heading text-3xl accent-gold">{item.value}</dd>
-                <dd className="text-xs text-cream/60 mt-1 leading-snug">{item.label}</dd>
-              </div>
-            ))}
-          </motion.dl>
         </motion.div>
 
         {/* Profile Image */}
