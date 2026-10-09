@@ -100,7 +100,7 @@ const CertificationsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-16 bg-background" ref={ref}>
+    <section className="portfolio-accent py-16 bg-background" ref={ref}>
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -108,7 +108,7 @@ const CertificationsSection = () => {
           transition={{ duration: 0.6 }}
           className="flex items-center justify-center gap-3 mb-12"
         >
-          <Award size={28} className="text-forest" />
+          <Award size={28} className="accent-text" />
           <h3 className="font-heading text-3xl md:text-4xl">Certifications</h3>
         </motion.div>
 
@@ -119,15 +119,15 @@ const CertificationsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
-              className="group bg-forest/5 border border-forest/20 p-6 hover:border-forest/40 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="group accent-card border p-6 hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
               {/* Header with subtle badge icon */}
               <div className="flex items-start gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-forest/10 flex items-center justify-center flex-shrink-0">
-                  <Award size={20} className="text-forest" />
+                <div className="w-10 h-10 rounded-full accent-key flex items-center justify-center flex-shrink-0">
+                  <Award size={20} className="accent-text" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-heading text-lg font-medium leading-tight text-foreground group-hover:text-forest transition-colors">
+                  <h4 className="font-heading text-lg font-medium leading-tight text-foreground  transition-colors">
                     {cert.name}
                   </h4>
                 </div>
@@ -164,7 +164,7 @@ const CertificationsSection = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="w-full border-forest/30 text-forest hover:bg-forest hover:text-primary-foreground hover:border-forest transition-all duration-300 group-hover:border-forest"
+                  className="w-full accent-button transition-all duration-300 "
                 >
                   <span>View Credential</span>
                   <ExternalLink size={14} className="ml-2" />

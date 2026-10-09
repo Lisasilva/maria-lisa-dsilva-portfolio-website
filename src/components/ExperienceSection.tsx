@@ -65,7 +65,7 @@ const ExperienceSection = () => {
   return (
     <section
       id="experience"
-      className="section-padding bg-forest text-primary-foreground"
+      className="portfolio-accent section-padding bg-forest text-primary-foreground"
       ref={ref}
     >
       <div className="container-narrow">
@@ -75,14 +75,14 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="label-text text-sage mb-4">Professional Journey</p>
+          <p className="label-text accent-text mb-4">Professional Journey</p>
           <h2 className="editorial-heading text-cream">Experience</h2>
         </motion.div>
 
         {/* Vertical Timeline */}
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-cream/20" />
+          <div className="absolute left-0 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 accent-line" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -95,14 +95,14 @@ const ExperienceSection = () => {
               }`}
             >
               {/* Timeline Dot */}
-              <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-3 h-3 bg-sage rounded-full border-2 border-cream/40" />
+              <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 w-3 h-3 accent-dot rounded-full border-2" />
 
               {/* Content */}
               <div className={`flex-1 pl-8 md:pl-0 md:max-w-[600px] ${index % 2 === 0 ? "md:pr-12 md:text-right md:ml-auto" : "md:pl-12"}`}>
-                <div className="bg-cream/10 p-6 border border-cream/20 hover:border-cream/50 hover:shadow-[0_0_25px_rgba(74,93,78,0.25)] hover:[&_h3]:text-sage hover:[&_span]:text-cream hover:[&_li_span]:text-cream/90 transition-all duration-300">
+                <div className="accent-card p-6 border   transition-all duration-300">
                   <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                    <Briefcase size={16} className="text-sage" />
-                    <span className="label-text text-sage">{exp.company}</span>
+                    <Briefcase size={16} className="accent-text" />
+                    <span className="label-text accent-text">{exp.company}</span>
                   </div>
                   <h3 className="font-heading text-xl md:text-2xl text-cream mb-2">
                     {exp.title}
@@ -114,18 +114,18 @@ const ExperienceSection = () => {
                   <ul className={`space-y-2 text-cream/70 text-sm ${index % 2 === 0 ? "md:text-right" : ""}`}>
                     {exp.description.map((item, i) => (
                       <li key={i} className={`flex items-start gap-2 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
-                        <span className="text-sage mt-1.5">•</span>
+                        <span className="accent-text mt-1.5">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                   {exp.achievements && (
-                    <div className="mt-4 pt-3 border-t border-cream/10">
-                      <p className={`text-sage font-medium text-sm mb-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>Achievements</p>
+                    <div className="mt-4 pt-3 border-t accent-edge">
+                      <p className={`accent-text font-medium text-sm mb-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>Achievements</p>
                       <ul className={`space-y-2 text-cream/70 text-sm ${index % 2 === 0 ? "md:text-right" : ""}`}>
                         {exp.achievements.map((item, i) => (
                           <li key={i} className={`flex items-start gap-2 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
-                            <span className="text-sage mt-1.5">★</span>
+                            <span className="accent-text mt-1.5">★</span>
                             <span>{item}</span>
                           </li>
                         ))}
