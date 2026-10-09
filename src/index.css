@@ -50,6 +50,12 @@
     --charcoal: 150 10% 25%;
     --sage: 140 15% 75%;
     --warm-gray: 30 5% 60%;
+    --yellow: 38.757764 100% 68.431373%;
+    --yellow-hover: 38.757764 100% 78%;
+    --coral: 22.014388 88.535032% 30.784314%;
+    --coral-hover: 22.014388 78% 39%;
+    --accent-on-yellow: 152 30% 18%;
+    --accent-on-coral: 40 30% 97%;
   }
 
   .dark {
@@ -102,6 +108,94 @@
 }
 
 @layer components {
+  .portfolio-accent {
+    --section-accent: var(--coral);
+    --section-accent-hover: var(--coral-hover);
+    --section-accent-foreground: var(--accent-on-coral);
+    --section-accent-opacity: 0.06;
+    --section-accent-border-opacity: 0.3;
+    --section-card-text: var(--foreground);
+    --section-card-muted: var(--muted-foreground);
+    --section-art-overlay: var(--coral);
+  }
+
+  .portfolio-accent.bg-forest {
+    --section-accent: var(--yellow);
+    --section-accent-hover: var(--yellow-hover);
+    --section-accent-foreground: var(--accent-on-yellow);
+    --section-accent-opacity: 0.12;
+    --section-accent-border-opacity: 0.35;
+    --section-card-text: var(--cream);
+    --section-card-muted: var(--cream);
+  }
+
+  .accent-card {
+    background: hsl(var(--section-accent) / var(--section-accent-opacity));
+    border-color: hsl(var(--section-accent) / var(--section-accent-border-opacity));
+  }
+
+  .accent-card:hover {
+    background: hsl(var(--section-accent) / 0.16);
+    border-color: hsl(var(--section-accent) / 0.7);
+    box-shadow: 0 8px 28px hsl(var(--section-accent) / 0.16);
+  }
+
+  .accent-key {
+    background: hsl(var(--section-accent) / 0.12);
+    border-color: hsl(var(--section-accent) / 0.3);
+    color: hsl(var(--section-accent));
+  }
+
+  .accent-key:hover {
+    background: hsl(var(--section-accent) / 0.22);
+    border-color: hsl(var(--section-accent) / 0.65);
+  }
+
+  .accent-button {
+    background: hsl(var(--section-accent));
+    color: hsl(var(--section-accent-foreground));
+    border-color: hsl(var(--section-accent));
+  }
+
+  .accent-button:hover {
+    background: hsl(var(--section-accent-hover));
+    color: hsl(var(--section-accent-foreground));
+    border-color: hsl(var(--section-accent-hover));
+    box-shadow: 0 4px 16px hsl(var(--section-accent) / 0.22);
+  }
+
+  .accent-outline {
+    background: hsl(var(--section-accent) / 0.1);
+    color: hsl(var(--section-accent));
+    border-color: hsl(var(--section-accent) / 0.6);
+  }
+
+  .accent-outline:hover {
+    background: hsl(var(--section-accent-hover));
+    color: hsl(var(--section-accent-foreground));
+    border-color: hsl(var(--section-accent-hover));
+  }
+
+  .accent-text { color: hsl(var(--section-accent)); }
+  .accent-edge { border-color: hsl(var(--section-accent) / 0.4); }
+  .accent-dot { background: hsl(var(--section-accent)); border-color: hsl(var(--section-accent-hover)); }
+  .accent-line { background: hsl(var(--section-accent) / 0.3); }
+  .accent-frame { background: hsl(var(--section-accent) / 0.2); }
+  .group:hover .accent-frame {
+    background: hsl(var(--section-accent) / 0.3);
+    box-shadow: 0 0 40px hsl(var(--section-accent) / 0.25);
+  }
+  .accent-art-overlay {
+    background: linear-gradient(to top, hsl(var(--section-art-overlay) / 0.85), hsl(var(--section-art-overlay) / 0.15), transparent);
+  }
+  .accent-art-glow { box-shadow: inset 0 0 30px hsl(var(--section-accent) / 0.3); }
+
+  .dark .portfolio-accent:not(.bg-forest) {
+    --section-accent: 22.014388 85% 68%;
+    --section-accent-hover: 22.014388 90% 77%;
+    --section-accent-foreground: var(--accent-on-yellow);
+  }
+
   .section-padding {
     @apply py-20 md:py-28 lg:py-32;
   }
