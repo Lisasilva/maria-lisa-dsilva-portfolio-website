@@ -84,7 +84,7 @@ const ProjectsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="section-padding bg-forest" ref={ref}>
+    <section id="projects" className="portfolio-accent section-padding bg-forest" ref={ref}>
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -92,7 +92,7 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="label-text text-sage mb-4">Featured Work</p>
+          <p className="label-text accent-text mb-4">Featured Work</p>
           <h2 className="editorial-heading text-cream">Projects</h2>
         </motion.div>
 
@@ -103,14 +103,14 @@ const ProjectsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className="group h-full bg-charcoal/50 border border-sage/20 hover:border-sage/60 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(74,93,78,0.25)] hover:[&_h3]:text-sage hover:[&_p]:text-cream/90 flex flex-col"
+              className="group h-full accent-card border transition-all duration-300 hover:-translate-y-2   flex flex-col"
             >
               {/* Project Header */}
               <div className="p-6 pb-4">
-                <p className="text-xs font-medium tracking-widest uppercase text-sage mb-2">
+                <p className="text-xs font-medium tracking-widest uppercase accent-text mb-2">
                   {project.category}
                 </p>
-                <h3 className="font-heading text-xl text-cream group-hover:text-sage/90 transition-colors">
+                <h3 className="font-heading text-xl text-cream  transition-colors">
                   {project.title}
                 </h3>
               </div>
@@ -126,7 +126,7 @@ const ProjectsSection = () => {
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 bg-sage/10 border border-sage/20 text-xs text-cream/80 font-medium"
+                      className="px-2.5 py-1 accent-key border text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -134,9 +134,9 @@ const ProjectsSection = () => {
                 </div>
 
                 {/* Impact */}
-                <div className="pt-4 border-t border-sage/20 mb-4">
+                <div className="pt-4 border-t accent-edge mb-4">
                   <p className="text-sm">
-                    <span className="text-sage font-medium">Impact:</span>{" "}
+                    <span className="accent-text font-medium">Impact:</span>{" "}
                     <span className="text-cream/70">{project.impact}</span>
                   </p>
                 </div>
@@ -153,9 +153,9 @@ const ProjectsSection = () => {
                     className="block"
                   >
                     <Button
-                      variant="outline"
+                      variant="portfolio"
                       size="sm"
-                      className="w-full border-sage bg-sage/20 text-sage hover:bg-sage hover:text-forest hover:border-sage transition-all duration-300"
+                      className="w-full accent-button transition-all duration-300"
                     >
                       <Github size={16} className="mr-2" />
                       View Project
@@ -165,7 +165,7 @@ const ProjectsSection = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="w-full border-sage/20 text-cream/50 cursor-not-allowed"
+                    className="w-full accent-edge text-cream/50 cursor-not-allowed"
                     disabled
                   >
                     <Github size={16} className="mr-2" />

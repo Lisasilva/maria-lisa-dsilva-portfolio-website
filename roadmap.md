@@ -1,0 +1,4 @@
+- [x] Apply yellow and coral accents to cards, controls and hover states without changing backgrounds or navigation.
+- [x] Change Kannada proficiency to Fluent.
+- [x] Investigate stale resume and make both links request a fresh copy.
+- [x] Verify colours, links and layout in the preview.
