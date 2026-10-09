@@ -22,10 +22,10 @@ const languages = [
 
 const paintings = [
   { id: 1, src: silentMeadowImg, ratio: "638 / 900", title: "The Silent Meadow" },
-  { id: 2, src: peakyManImg, ratio: "675 / 900", title: "The Peaky Man" },
+  { id: 5, src: gentleSorrowImg, ratio: "665 / 900", title: "Gentle Sorrow" },
   { id: 3, src: redBloomsImg, ratio: "526 / 719", title: "Red Blooms in Earnest" },
   { id: 4, src: frostedWoodsImg, ratio: "900 / 675", title: "Frosted Woods" },
-  { id: 5, src: gentleSorrowImg, ratio: "665 / 900", title: "Gentle Sorrow" },
+  { id: 2, src: peakyManImg, ratio: "675 / 900", title: "The Peaky Man" },
   { id: 6, src: furyWavesImg, ratio: "652 / 900", title: "Fury Waves" },
 ];
 
@@ -52,7 +52,7 @@ const BeyondDataSection = () => {
       ref={ref}
     >
       <PaintingBackdrop src={sunsetSkyImg} side="right" position="center top" />
-      <div className="container-narrow relative z-10">
+      <div className="container-wide relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -78,13 +78,12 @@ const BeyondDataSection = () => {
                 <span className="label-text">Creative Corner</span>
               </div>
               <h3 className="font-heading text-4xl md:text-5xl leading-tight">
-                Plot twist: <em className="accent-text">I paint too.</em>
+                I paint too, <em className="accent-text">you know.</em>
               </h3>
             </div>
             <p className="body-large text-muted-foreground">
-              Remember those soft backgrounds behind every section? Not stock
-              photos. Every one of them is a painting of mine. Here they are
-              properly, without the haze.
+              Noticed those light background paintings on every section? I
+              painted 'em all!! Here they are all clear, without the haze.
             </p>
           </div>
 

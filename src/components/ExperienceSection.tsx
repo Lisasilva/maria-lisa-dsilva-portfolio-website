@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Award, Briefcase } from "lucide-react";
+import { ArrowUpRight, Award, Briefcase } from "lucide-react";
 import furyWavesImg from "@/assets/backgrounds/fury-waves.jpg";
 import PaintingBackdrop from "@/components/PaintingBackdrop";
 
-const experiences: { title: string; company: string; period: string; description: string[]; achievements?: string[] }[] = [
+const experiences: { title: string; company: string; period: string; description: string[]; achievements?: string[]; link?: { label: string; href: string } }[] = [
   {
     title: "Data Engineer",
     company: "Genpact",
@@ -22,6 +22,16 @@ const experiences: { title: string; company: string; period: string; description
       "Awarded Genpact Bronze Performance Excellence for technical ownership and delivery in the migration program.",
       "Selected Top 20 Performer (<4 YOE); inducted into Technical Leadership Development Program.",
     ],
+  },
+  {
+    title: "Co-founder",
+    company: "Peelahaati",
+    period: "Mar 2025 – Oct 2025",
+    description: [
+      "Co-founded Peelahaati, an artisan-focused e-commerce initiative connecting Indian craftsmen with customers seeking authentic handmade products.",
+      "Led early-stage business development, brand strategy, artisan partnerships, product curation, and operational planning while establishing marketplace processes and improving workflows to support scalable growth.",
+    ],
+    link: { label: "linktr.ee/peelahaati", href: "https://linktr.ee/peelahaati" },
   },
   {
     title: "GenAI Intern",
@@ -71,7 +81,7 @@ const ExperienceSection = () => {
       ref={ref}
     >
       <PaintingBackdrop src={furyWavesImg} position="center 55%" />
-      <div className="container-narrow relative z-10">
+      <div className="container-wide relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -83,7 +93,7 @@ const ExperienceSection = () => {
         </motion.div>
 
         {/* Single-column timeline: dates on the left rail, roles on the right */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           <div className="absolute left-[7px] md:left-[199px] top-0 bottom-0 w-px accent-line" />
 
           {experiences.map((exp, index) => (
@@ -100,7 +110,7 @@ const ExperienceSection = () => {
 
               <span className="absolute left-0 md:left-[192px] top-1.5 md:top-8 w-[15px] h-[15px] rounded-full accent-dot border-[3px]" />
 
-              <div className="accent-card p-6 md:p-7 border">
+              <div className="accent-card p-6 md:p-7 border hover:-translate-y-1">
                 <div className="flex items-center gap-2 mb-2">
                   <Briefcase size={15} className="accent-text" />
                   <span className="label-text accent-text">{exp.company}</span>
@@ -114,6 +124,17 @@ const ExperienceSection = () => {
                     </li>
                   ))}
                 </ul>
+                {exp.link && (
+                  <a
+                    href={exp.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium accent-gold hover:underline underline-offset-4"
+                  >
+                    Visit {exp.link.label}
+                    <ArrowUpRight size={14} />
+                  </a>
+                )}
                 {exp.achievements && (
                   <div className="mt-5 pt-4 border-t accent-edge">
                     <p className="label-text accent-gold mb-3">Achievements</p>

@@ -101,7 +101,7 @@ const CertificationsSection = () => {
 
   return (
     <section className="portfolio-accent relative z-10 py-16" ref={ref}>
-      <div className="container-narrow">
+      <div className="container-wide">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -119,7 +119,7 @@ const CertificationsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
-              className="group accent-card border p-6 hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="group accent-card border p-6 hover:-translate-y-2 transition-all duration-300 flex flex-col"
             >
               {/* Header with subtle badge icon */}
               <div className="flex items-start gap-3 mb-4">
