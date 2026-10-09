@@ -83,7 +83,7 @@ const SkillsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="section-padding bg-background" ref={ref}>
+    <section id="skills" className="portfolio-accent section-padding bg-background" ref={ref}>
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -103,17 +103,17 @@ const SkillsSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className="bg-forest/5 p-5 border border-forest/20 hover:border-forest/40 transition-colors hover-lift"
+              className="accent-card p-5 border transition-colors hover-lift"
             >
               <div className="flex items-center gap-3 mb-3">
-                <category.icon size={22} className="text-forest" />
+                <category.icon size={22} className="accent-text" />
                 <h3 className="font-heading text-lg">{category.title}</h3>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {category.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="px-2.5 py-1 bg-forest/10 border border-forest/15 text-xs text-muted-foreground hover:-translate-y-0.5 hover:border-forest/30 transition-all duration-200 cursor-default"
+                    className="px-2.5 py-1 accent-key border text-xs hover:-translate-y-0.5  transition-all duration-200 cursor-default"
                   >
                     {skill}
                   </span>
