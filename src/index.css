@@ -109,6 +109,7 @@
 
 @layer components {
   .portfolio-accent {
+    overflow-x: clip;
     --section-accent: var(--coral);
     --section-accent-hover: var(--coral-hover);
     --section-accent-foreground: var(--accent-on-coral);
