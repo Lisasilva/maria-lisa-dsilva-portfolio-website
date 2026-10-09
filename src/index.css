@@ -52,10 +52,15 @@
     --warm-gray: 30 5% 60%;
     --yellow: 38.757764 100% 68.431373%;
     --yellow-hover: 38.757764 100% 78%;
-    --coral: 22.014388 88.535032% 30.784314%;
-    --coral-hover: 22.014388 78% 39%;
-    --accent-on-yellow: 152 30% 18%;
-    --accent-on-coral: 40 30% 97%;
+    --coral: 12 85% 70%;
+    --coral-hover: 12 85% 64%;
+    --coral-soft: 14 75% 92%;
+    --coral-soft-hover: 14 75% 89%;
+    --yellow-soft: 44 85% 86%;
+    --yellow-soft-hover: 44 90% 82%;
+    --ochre: 34 65% 32%;
+    --gold: 40 52% 64%;
+    --gold-light: 40 60% 72%;
   }
 
   .dark {
@@ -108,93 +113,202 @@
 }
 
 @layer components {
+  /* Gallery theme: off-white sections use frosted white panels, forest sections use frosted green glass.
+     One accent (muted gold) is used sparingly for buttons, dots and hover lines. */
   .portfolio-accent {
     overflow-x: clip;
-    --section-accent: var(--coral);
-    --section-accent-hover: var(--coral-hover);
-    --section-accent-foreground: var(--accent-on-coral);
-    --section-accent-opacity: 0.06;
-    --section-accent-border-opacity: 0.3;
-    --section-card-text: var(--foreground);
-    --section-card-muted: var(--muted-foreground);
-    --section-art-overlay: var(--coral);
+    position: relative;
+    --section-ink: var(--forest);
+    --panel: 0 0% 100% / 0.72;
+    --panel-hover: 0 0% 100% / 0.9;
+    --panel-border: var(--forest) / 0.1;
+    --panel-hover-border: var(--gold) / 0.7;
+    --panel-shadow: 0 18px 40px -24px hsl(var(--forest) / 0.35);
+    --chip: var(--forest) / 0.05;
+    --chip-border: var(--forest) / 0.14;
+    --chip-text: var(--muted-foreground);
+    --button: var(--forest);
+    --button-hover: var(--forest-light);
+    --button-text: var(--cream);
+    --outline-text: var(--foreground);
+    --outline-border: var(--forest) / 0.3;
+    --box-title: var(--foreground);
+    --box-body: var(--muted-foreground);
+    --box-muted: var(--muted-foreground);
+    --rule: var(--forest) / 0.15;
   }
 
   .portfolio-accent.bg-forest {
-    --section-accent: var(--yellow);
-    --section-accent-hover: var(--yellow-hover);
-    --section-accent-foreground: var(--accent-on-yellow);
-    --section-accent-opacity: 0.12;
-    --section-accent-border-opacity: 0.35;
-    --section-card-text: var(--cream);
-    --section-card-muted: var(--cream);
+    --section-ink: var(--sage);
+    --panel: var(--forest) / 0.6;
+    --panel-hover: var(--forest) / 0.75;
+    --panel-border: var(--cream) / 0.12;
+    --panel-hover-border: var(--gold) / 0.6;
+    --panel-shadow: 0 24px 48px -28px rgb(0 0 0 / 0.6);
+    --chip: var(--cream) / 0.06;
+    --chip-border: var(--cream) / 0.18;
+    --chip-text: var(--cream) / 0.85;
+    --button: var(--gold);
+    --button-hover: var(--gold-light);
+    --button-text: var(--forest);
+    --outline-text: var(--cream);
+    --outline-border: var(--cream) / 0.3;
+    --box-title: var(--cream);
+    --box-body: var(--cream) / 0.72;
+    --box-muted: var(--cream) / 0.8;
+    --rule: var(--cream) / 0.12;
   }
 
   .accent-card {
-    background: hsl(var(--section-accent) / var(--section-accent-opacity));
-    border-color: hsl(var(--section-accent) / var(--section-accent-border-opacity));
+    background: hsl(var(--panel));
+    border-color: hsl(var(--panel-border));
+    border-radius: 6px;
+    box-shadow: var(--panel-shadow);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
   }
 
   .accent-card:hover {
-    background: hsl(var(--section-accent) / 0.16);
-    border-color: hsl(var(--section-accent) / 0.7);
-    box-shadow: 0 8px 28px hsl(var(--section-accent) / 0.16);
+    background: hsl(var(--panel-hover));
+    border-color: hsl(var(--panel-hover-border));
   }
 
   .accent-key {
-    background: hsl(var(--section-accent) / 0.12);
-    border-color: hsl(var(--section-accent) / 0.3);
-    color: hsl(var(--section-accent));
-  }
-
-  .accent-key:hover {
-    background: hsl(var(--section-accent) / 0.22);
-    border-color: hsl(var(--section-accent) / 0.65);
+    background: hsl(var(--chip));
+    border-color: hsl(var(--chip-border));
+    color: hsl(var(--chip-text));
+    border-radius: 999px;
   }
 
   .accent-button {
-    background: hsl(var(--section-accent));
-    color: hsl(var(--section-accent-foreground));
-    border-color: hsl(var(--section-accent));
+    background: hsl(var(--button));
+    color: hsl(var(--button-text));
+    border-color: hsl(var(--button));
+    border-radius: 4px;
   }
 
   .accent-button:hover {
-    background: hsl(var(--section-accent-hover));
-    color: hsl(var(--section-accent-foreground));
-    border-color: hsl(var(--section-accent-hover));
-    box-shadow: 0 4px 16px hsl(var(--section-accent) / 0.22);
+    background: hsl(var(--button-hover));
+    color: hsl(var(--button-text));
+    border-color: hsl(var(--button-hover));
+  }
+
+  /* Buttons inside a dark glass panel are quiet outlines that warm to gold on hover */
+  .bg-forest .accent-card .accent-button {
+    background: transparent;
+    color: hsl(var(--cream));
+    border-color: hsl(var(--cream) / 0.3);
+  }
+
+  .bg-forest .accent-card .accent-button:hover {
+    background: hsl(var(--gold));
+    color: hsl(var(--forest));
+    border-color: hsl(var(--gold));
+  }
+
+  .bg-forest .accent-card .accent-button--solid,
+  .bg-forest .accent-card .accent-button--solid:hover {
+    background: hsl(var(--gold));
+    color: hsl(var(--forest));
+    border-color: hsl(var(--gold));
   }
 
   .accent-outline {
-    background: hsl(var(--section-accent) / 0.1);
-    color: hsl(var(--section-accent));
-    border-color: hsl(var(--section-accent) / 0.6);
+    background: transparent;
+    color: hsl(var(--outline-text));
+    border-color: hsl(var(--outline-border));
+    border-radius: 4px;
   }
 
   .accent-outline:hover {
-    background: hsl(var(--section-accent-hover));
-    color: hsl(var(--section-accent-foreground));
-    border-color: hsl(var(--section-accent-hover));
+    background: hsl(var(--outline-text) / 0.08);
+    color: hsl(var(--outline-text));
+    border-color: hsl(var(--gold));
   }
 
-  .accent-text { color: hsl(var(--section-accent)); }
-  .accent-edge { border-color: hsl(var(--section-accent) / 0.4); }
-  .accent-dot { background: hsl(var(--section-accent)); border-color: hsl(var(--section-accent-hover)); }
-  .accent-line { background: hsl(var(--section-accent) / 0.3); }
-  .accent-frame { background: hsl(var(--section-accent) / 0.2); }
-  .group:hover .accent-frame {
-    background: hsl(var(--section-accent) / 0.3);
-    box-shadow: 0 0 40px hsl(var(--section-accent) / 0.25);
-  }
-  .accent-art-overlay {
-    background: linear-gradient(to top, hsl(var(--section-art-overlay) / 0.85), hsl(var(--section-art-overlay) / 0.15), transparent);
-  }
-  .accent-art-glow { box-shadow: inset 0 0 30px hsl(var(--section-accent) / 0.3); }
+  .accent-edge { border-color: hsl(var(--rule)); }
+  .accent-dot { background: hsl(var(--gold)); border-color: hsl(var(--forest)); }
+  .accent-line { background: linear-gradient(to bottom, transparent, hsl(var(--gold) / 0.5) 6%, hsl(var(--gold) / 0.5) 94%, transparent); }
+  .accent-frame { border: 1px solid hsl(var(--gold) / 0.45); }
+  .group:hover .accent-frame { border-color: hsl(var(--gold) / 0.8); }
 
-  .dark .portfolio-accent:not(.bg-forest) {
-    --section-accent: 22.014388 85% 68%;
-    --section-accent-hover: 22.014388 90% 77%;
-    --section-accent-foreground: var(--accent-on-yellow);
+  /* The artist's paintings sit behind each section: visible, but quieter than the content */
+  .painting-backdrop {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 0;
+  }
+
+  .painting-backdrop__art {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .bg-forest .painting-backdrop__art {
+    opacity: 0.34;
+    mix-blend-mode: luminosity;
+    filter: contrast(1.1);
+  }
+
+  .bg-forest .painting-backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, hsl(var(--forest)) 0%, transparent 20%, transparent 80%, hsl(var(--forest)) 100%);
+  }
+
+  .painting-backdrop--center,
+  .painting-backdrop--right,
+  .painting-backdrop--left {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 18%, black 72%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 18%, black 72%, transparent);
+  }
+
+  .painting-backdrop--right .painting-backdrop__art,
+  .painting-backdrop--left .painting-backdrop__art {
+    width: 58%;
+    opacity: 0.42;
+    filter: saturate(0.85);
+  }
+
+  .painting-backdrop--right .painting-backdrop__art {
+    right: 0;
+    -webkit-mask-image: linear-gradient(to left, black 35%, transparent);
+    mask-image: linear-gradient(to left, black 35%, transparent);
+  }
+
+  .painting-backdrop--left .painting-backdrop__art {
+    left: 0;
+    -webkit-mask-image: linear-gradient(to right, black 35%, transparent);
+    mask-image: linear-gradient(to right, black 35%, transparent);
+  }
+
+  /* Light sections, painting centred across the whole section */
+  .painting-backdrop--center .painting-backdrop__art {
+    opacity: 0.3;
+    filter: saturate(0.85);
+  }
+
+  /* Gallery wall: each painting sits in a white mat like a framed print */
+  .gallery-mat {
+    background: #fff;
+    padding: 12px 12px 0;
+    box-shadow: 0 20px 40px -24px hsl(var(--forest) / 0.45);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+
+  .gallery-mat:hover {
+    transform: translateY(-4px) rotate(-0.4deg);
+    box-shadow: 0 28px 50px -24px hsl(var(--forest) / 0.55);
   }
 
   .section-padding {
@@ -263,4 +377,13 @@
       opacity: 1;
     }
   }
+}
+
+@layer utilities {
+  /* Utility layer so it beats component colours like .label-text, as text-sage/text-forest did */
+  .accent-text { color: hsl(var(--section-ink)); }
+  .card-title { color: hsl(var(--box-title)); }
+  .card-body { color: hsl(var(--box-body)); }
+  .card-muted { color: hsl(var(--box-muted)); }
+  .accent-gold { color: hsl(var(--gold)); }
 }
