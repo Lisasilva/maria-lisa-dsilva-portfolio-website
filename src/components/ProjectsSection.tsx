@@ -153,7 +153,7 @@ const ProjectsSection = () => {
                     className="block"
                   >
                     <Button
-                      variant="outline"
+                      variant="portfolio"
                       size="sm"
                       className="w-full accent-button transition-all duration-300"
                     >
