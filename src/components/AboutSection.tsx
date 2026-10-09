@@ -31,7 +31,7 @@ const AboutSection = () => {
   return (
     <section id="about" className="portfolio-accent section-padding bg-background" ref={ref}>
       <PaintingBackdrop src={redBloomsImg} side="right" position="center" />
-      <div className="container-narrow relative z-10">
+      <div className="container-wide relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

@@ -1,82 +1,42 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import {
-  Code,
-  Database,
-  BarChart3,
-  Globe,
-  Wrench,
-} from "lucide-react";
+import { BarChart3, Code, Database, Layers, Workflow, Wrench } from "lucide-react";
 import CertificationsSection from "./CertificationsSection";
 import horseImg from "@/assets/backgrounds/gentle-sorrow.jpg";
 import PaintingBackdrop from "@/components/PaintingBackdrop";
 
+// Shown three per row on large screens, in this order
 const skillCategories = [
   {
     title: "Data Engineering",
+    icon: Workflow,
+    skills: ["Databricks", "ETL/ELT", "Medallion Architecture", "dbt", "DuckDB", "MotherDuck", "API Ingestion", "Data Migration", "Incremental Loading", "Data Quality"],
+  },
+  {
+    title: "Big Data & Processing",
+    icon: Layers,
+    skills: ["Apache Spark", "Spark SQL", "Airflow", "Batch Processing", "Pipeline Orchestration"],
+  },
+  {
+    title: "Databases",
     icon: Database,
-    skills: [
-      "Databricks",
-      "Airflow",
-      "Spark SQL",
-      "Greenplum",
-      "ETL / ELT",
-      "CI/CD",
-      "dbt",
-      "DuckDB",
-      "MotherDuck",
-      "API Ingestion",
-      "Data Migration",
-      "Orchestration",
-      "Medallion Architecture",
-      "PostgreSQL",
-      "Incremental Loading",
-      "Data Quality",
-      "Pandas",
-    ],
+    skills: ["PostgreSQL", "Greenplum", "MySQL", "Oracle", "DBeaver"],
   },
   {
     title: "Programming",
     icon: Code,
-    skills: ["SQL", "Python", "Java", "Bash / Shell Scripting", "Git"],
+    skills: ["Python", "SQL", "Pandas", "Java", "Bash / Shell", "Git"],
   },
   {
-    title: "BI & Analytics",
-    icon: BarChart3,
-    skills: [
-      "Power BI",
-      "Tableau",
-      "DAX",
-      "Excel",
-      "Data Visualization",
-      "Observable Framework",
-      "Interactive Map Dashboards",
-    ],
-  },
-  {
-    title: "Frameworks & Web",
-    icon: Globe,
-    skills: ["Spring Boot", "Hibernate", "REST APIs", "HTML", "CSS", "JDBC", "JPA"],
-  },
-  {
-    title: "Tools & Platforms",
+    title: "DevOps & Tools",
     icon: Wrench,
-    skills: [
-      "GitHub",
-      "GitHub Actions",
-      "DBeaver",
-      "Postman",
-      "VS Code",
-      "Cloudflare Pages",
-      "Claude Code",
-      "Lovable",
-      "Google Colab",
-      "Jupyter Notebooks",
-      "MySQL Workbench",
-      "RapidMiner",
-      "SQL Plus",
-    ],
+    skills: ["GitHub", "GitHub Actions", "CI/CD", "VS Code", "Postman", "Jupyter Notebooks", "Cloudflare Pages", "Claude Code", "Lovable", "Google Colab"],
+  },
+  {
+    title: "Analytics & Visualization",
+    icon: BarChart3,
+    skills: ["Power BI", "Tableau", "DAX", "Excel", "Observable Framework", "scikit-learn"],
   },
 ];
 
@@ -87,7 +47,7 @@ const SkillsSection = () => {
   return (
     <section id="skills" className="portfolio-accent section-padding bg-background" ref={ref}>
       <PaintingBackdrop src={horseImg} side="center" position="center 35%" />
-      <div className="container-narrow relative z-10">
+      <div className="container-wide relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -116,7 +76,7 @@ const SkillsSection = () => {
                 {category.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="px-2.5 py-1 accent-key border text-xs hover:-translate-y-0.5 transition-all duration-200 cursor-default"
+                    className="px-2.5 py-1 accent-key border text-xs hover:-translate-y-1 transition-all duration-200 cursor-default"
                   >
                     {skill}
                   </span>
