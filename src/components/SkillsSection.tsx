@@ -9,6 +9,8 @@ import {
   Wrench,
 } from "lucide-react";
 import CertificationsSection from "./CertificationsSection";
+import horseImg from "@/assets/backgrounds/gentle-sorrow.jpg";
+import PaintingBackdrop from "@/components/PaintingBackdrop";
 
 const skillCategories = [
   {
@@ -84,14 +86,15 @@ const SkillsSection = () => {
 
   return (
     <section id="skills" className="portfolio-accent section-padding bg-background" ref={ref}>
-      <div className="container-narrow">
+      <PaintingBackdrop src={horseImg} side="center" position="center 35%" />
+      <div className="container-narrow relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="label-text mb-4">Technical Expertise</p>
+          <p className="label-text mb-4">03 · Technical Expertise</p>
           <h2 className="editorial-heading">Skills & Certifications</h2>
         </motion.div>
 
@@ -113,7 +116,7 @@ const SkillsSection = () => {
                 {category.skills.map((skill, i) => (
                   <span
                     key={i}
-                    className="px-2.5 py-1 accent-key border text-xs hover:-translate-y-0.5  transition-all duration-200 cursor-default"
+                    className="px-2.5 py-1 accent-key border text-xs hover:-translate-y-0.5 transition-all duration-200 cursor-default"
                   >
                     {skill}
                   </span>

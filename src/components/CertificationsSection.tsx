@@ -100,7 +100,7 @@ const CertificationsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="portfolio-accent py-16 bg-background" ref={ref}>
+    <section className="portfolio-accent relative z-10 py-16" ref={ref}>
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -127,7 +127,7 @@ const CertificationsSection = () => {
                   <Award size={20} className="accent-text" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-heading text-lg font-medium leading-tight text-foreground  transition-colors">
+                  <h4 className="font-heading text-lg font-medium leading-tight text-foreground group-hover:text-forest transition-colors">
                     {cert.name}
                   </h4>
                 </div>
@@ -164,7 +164,7 @@ const CertificationsSection = () => {
                 <Button
                   variant="portfolio"
                   size="sm"
-                  className="w-full accent-button transition-all duration-300 "
+                  className="w-full accent-button transition-all duration-300"
                 >
                   <span>View Credential</span>
                   <ExternalLink size={14} className="ml-2" />
