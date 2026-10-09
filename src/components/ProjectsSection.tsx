@@ -6,13 +6,22 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "HarbourOS",
+    title: "HarbourOS - AIS Port-Call Data Pipeline",
     category: "Data Engineering",
     description:
-      "Built a live data pipeline that converts Norwegian coastal AIS signals into confidence-scored port-call events, visualized through a public dashboard.",
-    tech: ["Python", "DuckDB", "dbt", "GitHub Actions", "Dagster", "MotherDuck", "Claude Code"],
-    impact: "Detected 25,000+ port calls with a confidence score on every one",
+      "Scheduled data pipeline turning Norwegian coastal AIS ship positions into berth-matched, confidence-scored port-call events, served through a public dashboard.",
+    tech: ["Python", "SQL", "DuckDB", "MotherDuck", "dbt", "GitHub Actions", "Dagster", "pytest", "Claude code"],
+    impact: "Turned 1.8M+ raw AIS messages into berth-matched port calls, self-validating 100 random samples every run against OpenStreetMap, voyage reports and ship-declared destinations.",
     link: "https://github.com/Lisasilva/HarbourOS",
+  },
+  {
+    title: "Crime in India Data Platform",
+    category: "Data Engineering",
+    description:
+      "End-to-end crime data platform that turns 24 years of official NCRB statistics into tested, analytics-ready tables and a live website, rebuilt automatically on every code change.",
+    tech: ["Python", "SQL", "DuckDB", "dbt", "GitHub Actions", "pytest", "scikit-learn"],
+    impact: "Replaced an error-prone community dataset with official NCRB sources, reconciling 63.6M crimes (2001–2024) to published totals through 75 quality checks and 87 dbt tests that gate every automated build.",
+    link: "https://github.com/Lisasilva/Crimes-in-India-data-platform",
   },
   {
     title: "Vehicle Financing BI Dashboard",
