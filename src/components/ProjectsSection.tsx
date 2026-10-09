@@ -42,15 +42,6 @@ const projects = [
     link: "https://github.com/Lisasilva/AI-Powered-Document-De-Duplication-and-Consolidation",
   },
   {
-    title: "Crime Data Mining & Analysis",
-    category: "Data Science",
-    description:
-      "Developed clustering models to analyze crime patterns and predict high-risk areas using advanced data mining techniques.",
-    tech: ["Python", "Scikit-learn", "Clustering", "Data Visualization"],
-    impact: "Identified 15+ crime pattern clusters",
-    link: "https://github.com/Lisasilva/Crime-Analysis-in-India",
-  },
-  {
     title: "Personal Portfolio Website",
     category: "Web Development",
     description:
