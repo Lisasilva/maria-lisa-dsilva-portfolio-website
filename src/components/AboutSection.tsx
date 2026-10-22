@@ -9,24 +9,13 @@ const AboutSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const education = [
-    {
-      degree: "B.Tech in Computer & Communication Engineering",
-      school: "Manipal Institute of Technology, Manipal, India",
-      minor: "Minor in Big Data Analytics",
-      years: "2020–2024",
-    },
-    {
-      degree: "12th Grade",
-      school: "Madhava Kripa School, Manipal, India",
-      years: "",
-    },
-    {
-      degree: "10th Grade",
-      school: "S.M.S. English Medium School, Brahmavara, India",
-      years: "",
-    },
-  ];
+  const education = {
+    qualification: "Bachelor of Technology",
+    degree: "Computer & Communication Engineering",
+    minor: "Minor in Big Data Analytics",
+    school: "Manipal Institute of Technology, Manipal, India",
+    years: "2020–2024",
+  };
 
   return (
     <section id="about" className="portfolio-accent section-padding bg-background" ref={ref}>
@@ -51,20 +40,17 @@ const AboutSection = () => {
           >
             <div className="space-y-4 body-large text-muted-foreground">
               <p>
-                I'm a Data Engineer with a passion for designing and
-                implementing scalable data solutions that drive business
-                insights. My expertise spans across Big Data ecosystems, BI
-                visualizations, and applied machine learning.
-              </p>
-              <p>
-                With hands-on experience in enterprise-level data migrations,
-                ETL pipeline development, and real-time analytics, I thrive on
-                transforming complex data challenges into elegant, efficient
-                solutions.
+                I enjoy building data systems that are reliable, scalable, and
+                easy to work with. Whether it's modernizing enterprise data
+                platforms or building personal projects from scratch, I like
+                understanding how things work under the hood and solving
+                problems one layer at a time.
               </p>
               <p>
                 Outside the world of data, I express my creativity through
-                painting and staying committed to my Duolingo streak.
+                painting and staying committed to my Duolingo streak, and
+                occasionally dive into side projects just to explore a new
+                technology or idea.
               </p>
             </div>
 
@@ -93,26 +79,24 @@ const AboutSection = () => {
             </div>
 
             <div className="space-y-6">
-              {education.map((edu, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  className="border-l-2 accent-edge pl-6 py-2"
-                >
-                  <h4 className="font-medium text-lg">{edu.degree}</h4>
-                  <p className="text-muted-foreground">{edu.school}</p>
-                  {edu.minor && (
-                    <p className="text-sm accent-text">{edu.minor}</p>
-                  )}
-                  {edu.years && (
-                    <p className="text-sm text-muted-foreground mt-1">
-                      {edu.years}
-                    </p>
-                  )}
-                </motion.div>
-              ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="border-l-2 accent-edge pl-6 py-2"
+            >
+              <h4 className="font-heading font-bold text-3xl leading-snug">
+                {education.qualification}
+              </h4>
+              <p className="font-bold text-lg mt-2">{education.degree}</p>
+              <p className="font-bold mt-1">{education.minor}</p>
+              <p className="italic text-muted-foreground mt-4">
+                {education.school}
+              </p>
+              <p className="italic text-sm text-muted-foreground mt-1">
+                {education.years}
+              </p>
+            </motion.div>
             </div>
           </motion.div>
         </div>
