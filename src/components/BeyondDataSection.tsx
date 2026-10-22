@@ -74,7 +74,7 @@ const BeyondDataSection = () => {
           <div className="max-w-3xl mx-auto text-center mb-14">
             <div
               aria-hidden="true"
-              className="mb-7 flex items-center justify-center gap-3"
+              className="mb-5 flex items-center justify-center gap-3"
             >
               <span className="h-px w-12 border-t accent-edge" />
               <span className="h-1.5 w-1.5 rounded-full accent-dot" />
