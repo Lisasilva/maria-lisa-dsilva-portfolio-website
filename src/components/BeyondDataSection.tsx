@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useCallback } from "react";
-import { Globe, Award, ExternalLink } from "lucide-react";
+import { Globe, Award } from "lucide-react";
 
 import silentMeadowImg from "@/assets/gallery/silent-meadow.jpg";
 import peakyManImg from "@/assets/gallery/peaky-man.jpg";
@@ -141,15 +141,6 @@ const BeyondDataSection = () => {
             <p className="text-sm text-muted-foreground leading-relaxed flex-1">
               Former member of the National Cadet Corps (NCC) (2015–2017). The experience strengthened my discipline, leadership, and teamwork while training me in structured decision-making, responsibility, and performing effectively under pressure.
             </p>
-            <a
-              href="/NCC.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 shrink-0 text-sm accent-text font-medium hover:underline"
-            >
-              Certificate
-              <ExternalLink size={14} />
-            </a>
           </div>
         </motion.div>
       </div>

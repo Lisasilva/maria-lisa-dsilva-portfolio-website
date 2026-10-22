@@ -61,10 +61,11 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="body-large text-cream/80 max-w-lg mb-10"
           >
-            Data Engineer specializing in building robust, scalable data
-            pipelines and enterprise data platforms, with hands-on experience
-            in data analysis, business intelligence, full-stack development,
-            and applied machine learning. Currently based in Dubai, UAE.
+            Databricks Certified Data Engineer building scalable data
+            platforms and reliable data pipelines using Apache Spark, SQL,
+            Python, and modern cloud technologies. Experienced in enterprise
+            Lakehouse migrations, ETL/ELT workflows, data quality engineering,
+            and designing end-to-end data solutions. Based in Dubai, UAE.
           </motion.p>
 
           <motion.div
