@@ -47,8 +47,7 @@ const AboutSection = () => {
                 problems one layer at a time.
               </p>
               <p>
-                Outside the world of data, I express my creativity through
-                painting and staying committed to my Duolingo streak, and
+                Outside the world of data, I paint, maintain my Duolingo streak, and
                 occasionally dive into side projects just to explore a new
                 technology or idea.
               </p>
