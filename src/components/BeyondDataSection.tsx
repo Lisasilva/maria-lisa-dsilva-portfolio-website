@@ -80,7 +80,7 @@ const BeyondDataSection = () => {
               <span className="h-1.5 w-1.5 rounded-full accent-dot" />
               <span className="h-px w-12 border-t accent-edge" />
             </div>
-            <p className="text-xl md:text-2xl leading-relaxed font-normal text-foreground">
+            <p className="text-lg md:text-xl leading-relaxed font-normal text-muted-foreground">
               Noticed those light background paintings in every section?
               <br />
               I painted 'em all!! Here they are, clear and without the haze :)
