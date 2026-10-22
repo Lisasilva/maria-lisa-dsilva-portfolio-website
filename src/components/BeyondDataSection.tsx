@@ -59,7 +59,7 @@ const BeyondDataSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <p className="label-text mb-4">05 · The Human Side</p>
+          <p className="label-text mb-4">05 · The Fun Side</p>
           <h2 className="editorial-heading">Beyond Data</h2>
         </motion.div>
 
@@ -71,15 +71,20 @@ const BeyondDataSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="scroll-mt-28 mb-24"
         >
-          <div className="grid md:grid-cols-[1fr_1.1fr] gap-6 md:gap-16 items-end mb-12">
-            <div>
-              <h3 className="font-heading text-4xl md:text-5xl leading-tight">
-                I paint too, <em className="accent-text">you know.</em>
-              </h3>
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <div
+              aria-hidden="true"
+              className="mb-7 flex items-center justify-center gap-3"
+            >
+              <span className="h-px w-12 border-t accent-edge" />
+              <span className="h-1.5 w-1.5 rounded-full accent-dot" />
+              <span className="h-px w-12 border-t accent-edge" />
             </div>
-            <p className="body-large text-muted-foreground">
-              Noticed those light background paintings in every section? I
-              painted 'em all!! Here they are, clear and without the haze :)
+            <p className="editorial-subheading leading-snug">
+              Noticed those light background paintings in every section?
+            </p>
+            <p className="body-large text-muted-foreground mt-4">
+              I painted 'em all!! Here they are, clear and without the haze :)
             </p>
           </div>
 
